@@ -5,7 +5,7 @@ import tests from "../styles/theme/main.module.scss";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-theme="dark">
       <div className={tests.test}>text sass</div>
       <Head>
         <title>Create Next App</title>

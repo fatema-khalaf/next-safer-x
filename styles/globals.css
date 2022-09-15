@@ -1,4 +1,72 @@
-html,
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+}
+:root {
+  --main-color: #fcd535;
+  --second-color: #1a1b1f;
+  --second-color-a: #1a1b1f1a;
+  --bg-main-color: #FFFFFF;
+  --bg-second-color: #e2e2e2;
+  --bg-third-color: #374756;
+  --bg-forth-color: #1c252d;
+  --dec-color: #F23645;
+
+  --color-font-body: #c3c9d4; 
+  --color-font-primary: #343a40;
+  --color-font-secondary: #E3C15A;
+}
+
+/* for multi theme add color here */
+[data-theme='dark'] {
+  --bg-modern: #fafafa;
+  --main-color: #fcd535;
+  --second-color: #1a1b1f;
+  --second-color-a: #1a1b1f1a;
+  --bg-main-color: #1c252d;
+  --bg-second-color: #374756;
+  --bg-third-color: #FFFFFF;
+  --bg-forth-color: #e2e2e2;
+  --dec-color: #F23645;
+
+  --color-font-body: #c3c9d4;
+  --color-font-primary: #343a40;
+  --color-font-secondary: #E3C15A;
+}
+@media only screen and (max-width: 62.5em) {
+  html{font-size: 50%;}
+}
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+  src: local('Roboto'), url(../public/fonts/Roboto-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 700;
+  src: local('Roboto'), url(../public/fonts/Roboto-Bold.ttf) format('truetype');
+}
+body {
+    font-family: Roboto ;
+    color:var(--color-font-primary);
+    font-weight: 300;
+    background-color: var(--bg-main-color);
+    line-height: 1.6;
+}
+
+
+
+
+
+/* html,
 body {
   padding: 0;
   margin: 0;
@@ -23,4 +91,4 @@ a {
     color: white;
     background: black;
   }
-}
+} */
