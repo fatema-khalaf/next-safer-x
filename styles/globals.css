@@ -8,17 +8,21 @@
 
 html {
     box-sizing: border-box;
-    font-size: 62.5%; 
+    font-size: 62.5%;
+}
+a{
+    text-decoration: none;
 }
 :root {
   --main-color: #fcd535;
   --second-color: #1a1b1f;
   --second-color-a: #1a1b1f1a;
   --bg-main-color: #FFFFFF;
-  --bg-second-color: #e2e2e2;
+  --bg-second-color: #fafafa;
   --bg-third-color: #374756;
-  --bg-forth-color: #1c252d;
+  --bg-forth-color: #F5F5F5;
   --dec-color: #F23645;
+  --shadow-color: #e7e7e7;
 
   --color-font-body: #c3c9d4; 
   --color-font-primary: #343a40;
@@ -34,7 +38,7 @@ html {
   --bg-main-color: #1c252d;
   --bg-second-color: #374756;
   --bg-third-color: #FFFFFF;
-  --bg-forth-color: #e2e2e2;
+  --bg-forth-color: #F5F5F5;
   --dec-color: #F23645;
 
   --color-font-body: #c3c9d4;

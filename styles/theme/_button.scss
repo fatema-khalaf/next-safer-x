@@ -17,6 +17,10 @@
     min-height: 24px;
     border: none;
     background-color: $main-color;
+    &--lg {
+        @extend .btn;
+        padding: 0.9rem 3rem;
+    }
     &:hover {
         opacity: 0.8;
     }

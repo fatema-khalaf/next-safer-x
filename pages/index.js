@@ -1,15 +1,17 @@
 import Head from "next/head";
-import Image from "next/image";
-import Header from "../components/header/Header";
-import Portal from "../HOC/Portal";
+import Banner from "../components/hero/banner";
+import PopularMarket from "../components/market/popularMarket";
 import MainLayout from "../layouts/mainLayout";
-import styles from "../styles/Home.module.css";
-import tests from "../styles/theme/main.module.scss";
 
 export default function Home() {
   return (
     <div>
-      <h1>home</h1>
+      <Head>
+        <title>Home | Eco-TX</title>
+        <link rel="icon" href="/fav-icon.png" />
+      </Head>
+      <Banner />
+      <PopularMarket />
     </div>
     // <div className={styles.container}>
     //   <Head>
