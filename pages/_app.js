@@ -3,7 +3,8 @@ import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   const Layout = Component.Layout || EmptyLayout;
   return (
-    <div data-theme="dark">
+    // <div data-theme="dark">
+    <div>
       <Layout>
         <Component {...pageProps} />
       </Layout>

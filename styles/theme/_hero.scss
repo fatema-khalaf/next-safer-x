@@ -1,0 +1,22 @@
+.banner {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: $bg-second-color;
+    &__title {
+        height: 30rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        & :not(:last-child) {
+            margin-bottom: 3rem;
+        }
+    }
+    // @media only screen and (max-width: $bp-small) {
+    //     display: none;
+    // }
+}
