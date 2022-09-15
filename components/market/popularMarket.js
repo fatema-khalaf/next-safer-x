@@ -32,12 +32,17 @@ const PopularMarket = ({}) => {
             <Link href="/trade/index/market/btc_usdt/">
               <tr className={styles["table-row"]}>
                 <td>
-                  <div className={styles["body-2"]}>
-                    <span class="pr10">
-                      <img src="/Upload/coin/BTC.png" width="20px" />
-                    </span>
-                    <span>BTC</span>
-                    <span className={styles["caption"]}> Bitcoin</span>
+                  <div
+                    className={`${styles["body-2"]} ${styles["table-row__img"]}`}
+                  >
+                    <img
+                      src="https://safer-x.net/Upload/coin/BTC.png"
+                      style={{ width: "3.2rem", marginRight: "1.6rem" }}
+                    />
+                    <div>
+                      <span>BTC</span>
+                      <span className={styles["caption"]}> &nbsp;Bitcoin</span>
+                    </div>
                   </div>
                 </td>
                 <td className={styles["body-1"]}>18734.0900</td>
