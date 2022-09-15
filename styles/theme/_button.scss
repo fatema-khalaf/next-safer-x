@@ -1,0 +1,43 @@
+@import "base";
+.btn {
+    margin: 0px;
+    cursor: pointer;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    outline: none;
+    padding: 0.6rem 1.2rem;
+    // line-height: 20px;
+    min-width: 5.2px;
+    border-radius: 4px;
+    min-height: 24px;
+    border: none;
+    background-color: $main-color;
+    &:hover {
+        opacity: 0.8;
+    }
+    &:active {
+        opacity: 1;
+    }
+}
+// .btn {
+//     background-color: $color-secondary;
+//     color:$color-grey-mid-light;
+//     border: none;
+//     border-radius: 0;
+//     font-family: $font-display;
+//     font-size: 1.3rem;
+//     width: 100%;
+//     padding: 1.2rem 2rem;
+//     cursor: pointer;
+//     &:hover {
+//         background-color: rgba(#fff, .05);
+//     }
+//     &:active{
+//         background-color: $color-secondary;
+//     }
+// }

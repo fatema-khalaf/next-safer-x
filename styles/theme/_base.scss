@@ -1,0 +1,74 @@
+// COLOR VARIABLES
+$main-color: var(--main-color);
+$main-color-a: var(--main-color-a);
+$second-color: var(--second-color);
+$second-color-a: var(--second-color-a);
+$bg-main-color: var(--bg-main-color);
+$bg-second-color: var(--bg-second-color);
+$bg-third-color: var(--bg-third-color);
+$bg-forth-color: var(--bg-forth-color);
+$dec-color: var(--dec-color);
+
+$color-font-body: var(--color-font-body);
+$color-font-primary: var(--color-font-primary);
+$color-font-secondary: var(--color-font-secondary);
+
+// FONT VARIABLES
+$font-primary: "Roboto", sans-serif;
+// $font-secondary: 'Raleway', sans-serif;
+// $font-display:'Montserrat', sans-serif;
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px;
+$bp-small: 37.5em; // 600px;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+
+    @media only screen and (max-width: $bp-largest) {
+        font-size: 50%;
+    }
+}
+.test {
+    height: 300px;
+    width: 300px;
+    background-color: red;
+}
+body {
+    font-family: $font-primary;
+    color: $color-font-primary;
+    font-weight: 300;
+    background-color: $bg-main-color;
+    line-height: 1.6;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns:
+        [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(
+            8,
+            [col-start] minmax(min-content, 14rem) [col-end]
+        )
+        [center-end] minmax(6rem, 1fr) [full-end];
+
+    // @media only screen and (max-width: $bp-large) {
+    //     grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    //     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    // }
+
+    // @media only screen and (max-width: $bp-medium) {
+    //     grid-template-rows: 6rem calc(100vh - 6rem);
+    // }
+}

@@ -1,0 +1,181 @@
+.nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    @media only screen and (max-width: $bp-small) {
+        display: none;
+    }
+
+    &__item {
+        padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+        &--side {
+            display: flex;
+            align-items: center;
+            a {
+                margin-right: 0.8rem;
+                margin-left: 0.8rem;
+            }
+        }
+    }
+    &__link,
+    &__link:visited {
+        position: relative;
+        color: inherit;
+        text-decoration: none;
+        text-align: center;
+        // padding-bottom: 1.5rem;
+        text-transform: capitalize;
+        display: block;
+        transition: all 0.2s;
+    }
+
+    &__link:hover,
+    &__link:active {
+        cursor: pointer;
+        color: var(--main-color) !important;
+        // background-color: transparent !important;
+    }
+    &__link::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 0.15rem;
+        bottom: 0;
+        left: 0;
+        margin-bottom: -1.5rem;
+        background-color: $second-color !important;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+    }
+
+    a:hover::before,
+    a:active::before {
+        visibility: visible;
+        background-color: $main-color !important;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+
+    &__mid {
+        @media only screen and (max-width: $bp-medium) {
+            display: none;
+        }
+    }
+    &__menu {
+        display: none;
+        @media only screen and (max-width: $bp-medium) {
+            display: unset;
+        }
+    }
+}
+.nav-right {
+    margin-left: auto;
+    @media only screen and (max-width: $bp-large) {
+        display: none;
+    }
+}
+.toggle-menu {
+    display: none;
+    margin-left: auto;
+    @media only screen and (max-width: $bp-large) {
+        display: unset;
+    }
+}
+
+.side-menu-holder {
+    @media only screen and (max-width: $bp-large) {
+        box-sizing: border-box;
+        margin: 0px;
+        min-width: 0px;
+        position: fixed;
+        inset: 0px;
+        z-index: 9999;
+        flex-direction: row-reverse;
+        background-color: $second-color-a;
+        display: flex;
+        // position: fixed;
+        // left: 20;
+        // top: 0;
+        // right: 0;
+        // bottom: 0;
+        // z-index: 9999999;
+        // background-color: $bg-main-color;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+
+        // transition: all 0.6s ease-in-out;
+        pointer-events: none;
+        &__close {
+            transition-delay: 0.5s;
+            transition-property: all;
+            transform: translateX(100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        &__open {
+            transform: translateX(0);
+            opacity: 1;
+            pointer-events: visible;
+        }
+        &__content {
+            box-sizing: border-box;
+            margin: 0px;
+            min-width: 0px;
+            overflow: auto;
+            z-index: 999999;
+            height: 100%;
+            transition: all 0.5s ease 0s;
+            width: 37.5rem;
+            background-color: $bg-main-color;
+            &__close {
+                transform: translateX(100%);
+            }
+            &__open {
+                transform: translateX(0);
+            }
+            // transition: all 0.3s ease-in-out;
+        }
+        &__left {
+            box-sizing: border-box;
+            margin: 0;
+            min-width: 0;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+        }
+    }
+}
+.toggle-view-lg {
+    display: none;
+    @media only screen and (max-width: $bp-large) {
+        display: unset;
+    }
+}
+.toggle-view-sm {
+    display: none;
+    @media only screen and (max-width: $bp-small) {
+        display: unset;
+    }
+}
+
+.icon-warpper {
+    & :first-child:hover {
+        cursor: pointer;
+        color: $main-color !important;
+    }
+    display: none;
+    @media only screen and (max-width: $bp-large) {
+        display: unset;
+        box-sizing: border-box;
+        margin: 0px;
+        min-width: 0px;
+        display: flex;
+        padding: 16px;
+        -webkit-box-pack: end;
+        justify-content: flex-end;
+    }
+}
