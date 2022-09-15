@@ -8,6 +8,25 @@
 
     &__item {
         padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+        &--toggle {
+            &:hover {
+                div {
+                    display: block;
+                }
+            }
+        }
+        &--container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            &:hover {
+                span {
+                    transform-origin: center;
+                    rotate: 180deg;
+                }
+            }
+        }
         &--side {
             display: flex;
             align-items: center;
@@ -177,5 +196,45 @@
         padding: 16px;
         -webkit-box-pack: end;
         justify-content: flex-end;
+    }
+}
+.sub--menu {
+    display: none;
+    position: absolute;
+    margin-left: -1.5rem;
+    margin-top: 1.5rem;
+    // background-color: red;
+    // width: 50%;
+    // height: 30px;
+    z-index: 1;
+    &:hover {
+        display: block;
+    }
+    &__container {
+        padding: 1.6rem;
+        margin: 0;
+        background-color: $bg-main-color;
+        // position: relative;
+        box-shadow: 0px 0px 20px $second-color-a;
+        overflow: hidden;
+        min-width: 22rem;
+        max-width: 40rem;
+        border-radius: 0 0 8px 8px;
+        &--item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+            cursor: pointer;
+            padding: 1.6rem;
+            border-radius: 8px;
+            &:hover {
+                background-color: $main-color-a;
+                span {
+                    color: $main-color-dark !important;
+                    display: unset !important;
+                }
+            }
+        }
     }
 }

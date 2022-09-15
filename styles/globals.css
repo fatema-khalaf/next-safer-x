@@ -15,6 +15,8 @@ a{
 }
 :root {
   --main-color: #fcd535;
+  --main-color-a: #fcd43520;
+  --main-color-dark: #e0ac1e;
   --second-color: #1a1b1f;
   --second-color-a: #1a1b1f1a;
   --bg-main-color: #FFFFFF;

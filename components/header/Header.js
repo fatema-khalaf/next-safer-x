@@ -4,6 +4,8 @@ import { BsMoonStarsFill } from "react-icons/bs";
 import { items } from "../../DummyData/NavbarItems";
 import { useState } from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { TiArrowSortedDown } from "react-icons/ti";
+import { FaArrowRight } from "react-icons/fa";
 import NavBar from "./NavBar";
 import Link from "next/link";
 
@@ -23,10 +25,37 @@ const Header = ({}) => {
       </Link>
       <ul className={styles["nav"]}>
         {items.map((item) => (
-          <li className={`${styles["nav-1"]} ${styles["nav__item"]}`}>
-            <Link href={item.link}>
-              <a className={styles["nav__link"]}>{item.title}</a>
-            </Link>
+          <li
+            className={`${styles["nav-1"]} ${styles["nav__item"]} ${styles["nav__item--toggle"]}`}
+            key={item.id}
+          >
+            <span className={styles["nav__item--container"]}>
+              <Link href={item.link}>
+                <a className={styles["nav__link"]}>{item.title}</a>
+              </Link>
+              <span style={{ display: "flex", marginLeft: ".4rem" }}>
+                <TiArrowSortedDown />
+              </span>
+            </span>
+            {item.subMenu && (
+              <div className={styles["sub--menu"]}>
+                <div className={styles["sub--menu__container"]}>
+                  {item.subMenu.map((subItem) => (
+                    <Link href={subItem.link} key={subItem.id}>
+                      <span className={styles["sub--menu__container--item"]}>
+                        <div className={styles["nav-1"]}>{subItem.title}</div>
+                        <span
+                          className={`${styles["nav-1"]}`}
+                          style={{ display: "none" }}
+                        >
+                          <FaArrowRight />
+                        </span>
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </li>
         ))}
       </ul>
