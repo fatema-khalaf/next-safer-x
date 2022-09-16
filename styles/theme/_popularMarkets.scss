@@ -6,8 +6,11 @@
     flex-direction: row;
     width: 100%;
     background-color: $bg-main-color;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    // -ms-overflow-style: none; /* IE and Edge */
+    // scrollbar-width: none; /* Firefox */
+    // &::-webkit-scrollbar {
+    //     opacity: 0; /* Safari and Chrome */
+    // }
     overflow: auto;
 
     &--container {

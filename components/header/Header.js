@@ -42,15 +42,17 @@ const Header = ({}) => {
                 <div className={styles["sub--menu__container"]}>
                   {item.subMenu.map((subItem) => (
                     <Link href={subItem.link} key={subItem.id}>
-                      <span className={styles["sub--menu__container--item"]}>
-                        <div className={styles["nav-1"]}>{subItem.title}</div>
-                        <span
-                          className={`${styles["nav-1"]}`}
-                          style={{ display: "none" }}
-                        >
-                          <FaArrowRight />
+                      <a>
+                        <span className={styles["sub--menu__container--item"]}>
+                          <div className={styles["nav-1"]}>{subItem.title}</div>
+                          <span
+                            className={`${styles["nav-1"]}`}
+                            style={{ display: "none" }}
+                          >
+                            <FaArrowRight />
+                          </span>
                         </span>
-                      </span>
+                      </a>
                     </Link>
                   ))}
                 </div>

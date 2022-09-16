@@ -29,7 +29,7 @@ const PopularMarket = ({}) => {
           </thead>
 
           <tbody id="price_today_ul">
-            <Link href="/trade/index/market/btc_usdt/">
+            <Link href="#">
               <tr className={styles["table-row"]}>
                 <td>
                   <div
