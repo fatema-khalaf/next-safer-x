@@ -27,6 +27,15 @@
                 }
             }
         }
+        // &--toggle__sub {
+        //     padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+        //     &:hover {
+        //         background-color: aqua;
+        //         div {
+        //             display: flex;
+        //         }
+        //     }
+        // }
         &--side {
             display: flex;
             align-items: center;
@@ -179,6 +188,18 @@
     @media only screen and (max-width: $bp-small) {
         display: unset;
     }
+    &--sub {
+        display: none;
+        margin: 0px;
+        min-width: 0px;
+        transition: all 0.3s ease 0s;
+        // display: flex;
+        flex-direction: column;
+        animation: grow 0.3s;
+    }
+}
+.toggle-view-sm--sub__toggle {
+    display: flex !important;
 }
 
 .icon-warpper {
