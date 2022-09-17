@@ -2,9 +2,12 @@
 $main-color: var(--main-color);
 $main-color-dark: var(--main-color-dark);
 $main-color-a: var(--main-color-a);
+$main-color-a-dark: var(--main-color-a-dark);
 $second-color: var(--second-color);
 $second-color-a: var(--second-color-a);
+$bg-modern: var(--bg-modern);
 $bg-main-color: var(--bg-main-color);
+$bg-main-color-a: var(--bg-main-color-a);
 $bg-second-color: var(--bg-second-color);
 $bg-third-color: var(--bg-third-color);
 $bg-forth-color: var(--bg-forth-color);
@@ -17,7 +20,7 @@ $color-font-secondary: var(--color-font-secondary);
 
 // FONT VARIABLES
 $font-primary: "Roboto", sans-serif;
-// $font-secondary: 'Raleway', sans-serif;
+$font-secondary: "Rubik", sans-serif;
 // $font-display:'Montserrat', sans-serif;
 
 // RESPONSIVE BREAKPOINTS

@@ -1,6 +1,8 @@
 import Head from "next/head";
+import CardSection from "../components/cards/cardsSection";
 import Banner from "../components/hero/banner";
 import PopularMarket from "../components/market/popularMarket";
+import Card from "../components/UI/Card";
 import MainLayout from "../layouts/mainLayout";
 
 export default function Home() {
@@ -12,6 +14,7 @@ export default function Home() {
       </Head>
       <Banner />
       <PopularMarket />
+      <CardSection />
     </div>
     // <div className={styles.container}>
     //   <Head>

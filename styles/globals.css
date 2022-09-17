@@ -16,10 +16,12 @@ a{
 :root {
   --main-color: #fcd535;
   --main-color-a: #fcd43520;
+  --main-color-a-dark: #fcd535a1;
   --main-color-dark: #e0ac1e;
   --second-color: #1a1b1f;
   --second-color-a: #1a1b1f1a;
   --bg-main-color: #FFFFFF;
+  --bg-main-color-a: #ffffffa3;
   --bg-second-color: #fafafa;
   --bg-third-color: #374756;
   --bg-forth-color: #F5F5F5;
@@ -59,6 +61,11 @@ a{
   font-family: 'Roboto';
   font-weight: 700;
   src: local('Roboto'), url(../public/fonts/Roboto-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-weight: 100;
+  src: local('Rubik'), url(../public/fonts/Rubik-Light.ttf) format('truetype');
 }
 body {
     font-family: Roboto ;
