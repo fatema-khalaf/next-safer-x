@@ -101,20 +101,20 @@
 }
 .nav-right {
     margin-left: auto;
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: $bp-largest) {
         display: none;
     }
 }
 .toggle-menu {
     display: none;
     margin-left: auto;
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: $bp-largest) {
         display: unset;
     }
 }
 
 .side-menu-holder {
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: $bp-largest) {
         box-sizing: border-box;
         margin: 0px;
         min-width: 0px;
@@ -179,7 +179,7 @@
 }
 .toggle-view-lg {
     display: none;
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: $bp-largest) {
         display: unset;
     }
 }
@@ -208,7 +208,7 @@
         color: $main-color !important;
     }
     display: none;
-    @media only screen and (max-width: $bp-large) {
+    @media only screen and (max-width: $bp-largest) {
         display: unset;
         box-sizing: border-box;
         margin: 0px;

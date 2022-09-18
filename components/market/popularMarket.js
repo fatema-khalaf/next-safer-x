@@ -53,6 +53,102 @@ const PopularMarket = ({}) => {
                 <td className={styles["body-1"]}>-5.87%</td>
               </tr>
             </Link>
+            <Link href="#">
+              <tr className={styles["table-row"]}>
+                <td>
+                  <div
+                    className={`${styles["body-2"]} ${styles["table-row__img"]}`}
+                  >
+                    <img
+                      src="https://safer-x.net/Upload/coin/BTC.png"
+                      style={{ width: "3.2rem", marginRight: "1.6rem" }}
+                    />
+                    <div>
+                      <span>BTC</span>
+                      <span className={styles["caption"]}> &nbsp;Bitcoin</span>
+                    </div>
+                  </div>
+                </td>
+                <td className={styles["body-1"]}>18734.0900</td>
+                <td className={styles["body-1"]}>18733.8800</td>
+                <td className={styles["body-1"]}>18733.2400</td>
+                <td className={styles["body-1"]}>323641.0300</td>
+                <td className={styles["body-1"]}>6.063 bl</td>
+                <td className={styles["body-1"]}>-5.87%</td>
+              </tr>
+            </Link>
+            <Link href="#">
+              <tr className={styles["table-row"]}>
+                <td>
+                  <div
+                    className={`${styles["body-2"]} ${styles["table-row__img"]}`}
+                  >
+                    <img
+                      src="https://safer-x.net/Upload/coin/BTC.png"
+                      style={{ width: "3.2rem", marginRight: "1.6rem" }}
+                    />
+                    <div>
+                      <span>BTC</span>
+                      <span className={styles["caption"]}> &nbsp;Bitcoin</span>
+                    </div>
+                  </div>
+                </td>
+                <td className={styles["body-1"]}>18734.0900</td>
+                <td className={styles["body-1"]}>18733.8800</td>
+                <td className={styles["body-1"]}>18733.2400</td>
+                <td className={styles["body-1"]}>323641.0300</td>
+                <td className={styles["body-1"]}>6.063 bl</td>
+                <td className={styles["body-1"]}>-5.87%</td>
+              </tr>
+            </Link>
+            <Link href="#">
+              <tr className={styles["table-row"]}>
+                <td>
+                  <div
+                    className={`${styles["body-2"]} ${styles["table-row__img"]}`}
+                  >
+                    <img
+                      src="https://safer-x.net/Upload/coin/BTC.png"
+                      style={{ width: "3.2rem", marginRight: "1.6rem" }}
+                    />
+                    <div>
+                      <span>BTC</span>
+                      <span className={styles["caption"]}> &nbsp;Bitcoin</span>
+                    </div>
+                  </div>
+                </td>
+                <td className={styles["body-1"]}>18734.0900</td>
+                <td className={styles["body-1"]}>18733.8800</td>
+                <td className={styles["body-1"]}>18733.2400</td>
+                <td className={styles["body-1"]}>323641.0300</td>
+                <td className={styles["body-1"]}>6.063 bl</td>
+                <td className={styles["body-1"]}>-5.87%</td>
+              </tr>
+            </Link>
+            <Link href="#">
+              <tr className={styles["table-row"]}>
+                <td>
+                  <div
+                    className={`${styles["body-2"]} ${styles["table-row__img"]}`}
+                  >
+                    <img
+                      src="https://safer-x.net/Upload/coin/BTC.png"
+                      style={{ width: "3.2rem", marginRight: "1.6rem" }}
+                    />
+                    <div>
+                      <span>BTC</span>
+                      <span className={styles["caption"]}> &nbsp;Bitcoin</span>
+                    </div>
+                  </div>
+                </td>
+                <td className={styles["body-1"]}>18734.0900</td>
+                <td className={styles["body-1"]}>18733.8800</td>
+                <td className={styles["body-1"]}>18733.2400</td>
+                <td className={styles["body-1"]}>323641.0300</td>
+                <td className={styles["body-1"]}>6.063 bl</td>
+                <td className={styles["body-1"]}>-5.87%</td>
+              </tr>
+            </Link>
           </tbody>
         </table>
       </div>

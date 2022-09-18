@@ -1,23 +1,28 @@
 .cards--section {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    // @media only screen and (max-width: $bp-small) {
-    //     width: 100%;
-    // }
+    max-width: 95%;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    @media only screen and (max-width: $bp-largest) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media only screen and (max-width: $bp-small) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
+
 .card--container {
     padding: 3rem;
-    width: 33.3333333333%;
-    min-width: 37rem;
+    @media only screen and (max-width: $bp-largest) {
+        padding: 1.2rem;
+    }
 }
 .card {
     // animation and rotation functionality
     perspective: 150rem;
     -moz-prespective: 150rem;
-    height: 42rem; // this to reassign the collapsed height because of absolute position
+    height: 50rem; // this to reassign the collapsed height because of absolute position
     position: relative;
 
     &__side {
@@ -25,7 +30,7 @@
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: center;
-        height: 42rem;
+        height: 50rem;
         transition: all 0.8s ease;
         position: absolute; // this also make the div fit content
         top: 0;
@@ -47,7 +52,7 @@
                 background-image: linear-gradient(to right bottom, $main-color, $main-color);
             }
             &-1 {
-                background-image: linear-gradient(to right bottom, #6880e4, $bg-third-color);
+                background-image: linear-gradient(to right bottom, $bg-fifth-color, $bg-third-color);
             }
             &-2 {
                 background-image: linear-gradient(to right bottom, $main-color, $dec-color);
