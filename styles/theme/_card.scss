@@ -1,6 +1,6 @@
 .cards--section {
     max-width: 95%;
-    margin: 0 auto;
+    margin: 2rem auto;
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
@@ -40,7 +40,9 @@
         backface-visibility: hidden;
         border-radius: 0.8rem;
         overflow: hidden; // to fix => the bg image is overflowing the border radius so it looks no more rounded.
-        box-shadow: 0 1.5rem 8rem 0px $shadow-color;
+        box-shadow: 1.1rem 1.5rem 4rem 0px $shadow-color;
+        // box-shadow: 11px 1rem 4rem 0px #c3c9d4;
+
         &--front {
             background-color: $bg-main-color;
             // background-image: linear-gradient(to right bottom, $main-color-a-dark, $main-color-a);

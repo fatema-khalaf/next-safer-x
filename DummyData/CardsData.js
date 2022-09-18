@@ -8,13 +8,13 @@ export const cards = [
   {
     title: "FINANCIAL SECURITY",
     description:
-      "UNBIASED ZERO-KNOWLEDGE PROOF PRIVACY AND CONFIDENTIALITY TECHNOLOGY PROTECTS USER PRIVACY. BASED ON SECURITY DESIGNS SUCH AS MULTIPLE SIGNATURES, OFFLINE SIGNATURES, AND LAYERED ARCHITECTURE, IT USES MATURE COLD AND HOT WALLET SEPARATION TECHNOLOGIES.",
+      "unbiased zero-knowledge proof privacy and confidentiality technology protects user privacy. based on security designs such as multiple signatures, offline signatures, and layered architecture, it uses mature cold and hot wallet separation technologies.",
     imageUrl: "/images/safer.png",
   },
   {
     title: "COMMUNITY TRADING MODEL",
     description:
-      "BUILD COMMUNITIES, DIRECTLY CONNECT CUSTOMERS, MAKE TRADITIONAL BUSINESS MANAGEMENT MORE OPEN, AND ACHIEVE A WIDER RANGE OF BUSINESS CONNECTIONS.",
+      "build communities, directly connect customers, make traditional business management more open, and achieve a wider range of business connections.",
     imageUrl: "/images/trading.png",
   },
 ];
