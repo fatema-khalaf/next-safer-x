@@ -1,0 +1,63 @@
+.scroller--section {
+    background-color: $main-color;
+    height: fit-content;
+}
+.text--scroll {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.marquee {
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+.marquee__span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 60s linear infinite;
+}
+
+.marquee2 span {
+    animation-delay: 5s;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+// .text--scroll {
+//     max-width: 100%;
+//     overflow: hidden;
+// }
+
+// .marquee {
+//     white-space: nowrap;
+//     overflow: hidden;
+//     display: inline-block;
+//     animation: marquee 3s linear infinite;
+// }
+
+// .marquee p {
+//     display: inline-block;
+// }
+
+// @keyframes marquee {
+//     0% {
+//         transform: translate3d(0, 0, 0);
+//     }
+//     100% {
+//         transform: translate3d(-50%, 0, 0);
+//     }
+// }
