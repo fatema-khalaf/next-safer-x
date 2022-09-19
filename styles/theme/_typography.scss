@@ -87,6 +87,15 @@
     @extend %body;
     font-size: 1.5rem;
     color: $second-color !important;
+    &--light {
+        @extend .nav-1;
+        color: $color-font-primary;
+    }
+}
+.nav--footer {
+    @extend %body;
+    font-size: 1.5rem;
+    color: $color-font-body;
 }
 .nav-2 {
     @extend %body;

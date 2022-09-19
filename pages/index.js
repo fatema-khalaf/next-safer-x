@@ -1,9 +1,11 @@
 import Head from "next/head";
 import Apps from "../components/apps/Apps";
 import CardSection from "../components/cards/cardsSection";
+import Footer from "../components/footer/footer";
 import Banner from "../components/hero/banner";
 import PopularMarket from "../components/market/popularMarket";
 import Card from "../components/UI/Card";
+import TextScroll from "../components/UI/TextScroll";
 import MainLayout from "../layouts/mainLayout";
 
 export default function Home() {
@@ -14,8 +16,10 @@ export default function Home() {
         <link rel="icon" href="/fav-icon.png" />
       </Head>
       <Banner />
+      <TextScroll />
       <PopularMarket />
       <CardSection />
+      <Footer />
       {/* <Apps /> */}
     </div>
     // <div className={styles.container}>

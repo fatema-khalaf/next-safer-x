@@ -30,7 +30,8 @@ a{
   --shadow-color: #e7e7e7;
 
   --color-font-light: #fafafa; 
-  --color-font-body: #c3c9d4; 
+  --color-font-body: #606b80; 
+  --color-font-caption: #707a8a;
   --color-font-primary: #343a40;
   --color-font-secondary: #E3C15A;
 }
