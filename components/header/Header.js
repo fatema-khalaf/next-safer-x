@@ -64,7 +64,7 @@ const Header = ({}) => {
 
       <ul className={`${styles["nav"]} ${styles["nav-right"]}`}>
         <li className={`${styles["nav-1"]} ${styles["nav__item"]}`}>
-          <a href="#" className={styles["nav__link"]}>
+          <a href="/login" className={styles["nav__link"]}>
             Login
           </a>
         </li>

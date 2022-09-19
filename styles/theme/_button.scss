@@ -1,6 +1,6 @@
 @import "base";
 .btn {
-    margin: 0px;
+    margin: 0;
     cursor: pointer;
     white-space: nowrap;
     display: inline-flex;
@@ -12,9 +12,9 @@
     outline: none;
     padding: 0.6rem 1.2rem;
     // line-height: 20px;
-    min-width: 5.2px;
-    border-radius: 4px;
-    min-height: 24px;
+    // min-width: 5.2px;
+    border-radius: 0.4rem;
+    min-height: 2.4rem;
     border: none;
     background-color: $main-color;
     &--lg {
@@ -26,6 +26,17 @@
     }
     &:active {
         opacity: 1;
+    }
+    &--login {
+        @extend .btn;
+        font-size: 1.5rem !important;
+        padding: 2rem 1rem 2rem 2rem;
+        width: 83%;
+        border-radius: 3rem;
+        box-shadow: 0.3rem 0.3rem 0.8rem $shadow-second-color, -0.3rem -0.3rem 0.8rem $bg-main-color;
+        &:active {
+            box-shadow: unset;
+        }
     }
 }
 // .btn {

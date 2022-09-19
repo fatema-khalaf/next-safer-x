@@ -2,6 +2,7 @@ import Head from "next/head";
 import Apps from "../components/apps/Apps";
 import CardSection from "../components/cards/cardsSection";
 import Footer from "../components/footer/footer";
+import LogoHeader from "../components/header/LogoHeader";
 import Banner from "../components/hero/banner";
 import PopularMarket from "../components/market/popularMarket";
 import Card from "../components/UI/Card";
@@ -19,7 +20,7 @@ export default function Home() {
       <TextScroll />
       <PopularMarket />
       <CardSection />
-      <Footer />
+      {/* <Footer /> */}
       {/* <Apps /> */}
     </div>
     // <div className={styles.container}>
