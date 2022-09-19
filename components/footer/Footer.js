@@ -14,19 +14,19 @@ const Footer = () => {
           <img src="/images/logo.png" />
           <div className={styles["social--links"]}>
             <a>
-              <BsFacebook className={styles["icon"]} />
+              <BsFacebook />
             </a>
             <a>
-              <GrTwitter className={styles["icon"]} />
+              <GrTwitter />
             </a>
             <a>
-              <SiYoutube className={styles["icon"]} />
+              <SiYoutube />
             </a>
             <a>
-              <FaTelegramPlane className={styles["icon"]} />
+              <FaTelegramPlane />
             </a>
             <a>
-              <ImLinkedin2 className={styles["icon"]} />
+              <ImLinkedin2 />
             </a>
           </div>
         </div>
