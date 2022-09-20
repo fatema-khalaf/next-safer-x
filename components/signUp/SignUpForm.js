@@ -1,8 +1,11 @@
 import styles from "../../styles/theme/main.module.scss";
 import { TiUserOutline } from "react-icons/ti";
 import { HiOutlineKey } from "react-icons/hi";
+import { HiOutlineMail } from "react-icons/hi";
+import { MdOutlinePhoneIphone } from "react-icons/md";
+import { MdOutlineInsertInvitation } from "react-icons/md";
 import Link from "next/link";
-const Login = () => {
+const SignUp = () => {
   return (
     <div className={styles["login--page"]}>
       <div className={styles["login__container"]}>
@@ -11,10 +14,10 @@ const Login = () => {
         </div>
         <div style={{ textAlign: "center", width: "100%" }}>
           <h6 className={styles["h3"]} style={{ margin: "2rem" }}>
-            LogIn
+            Sign Up
           </h6>
           <h6 className={styles["caption"]} style={{ letterSpacing: "3px" }}>
-            Wellcome back!
+            Create new account!
           </h6>
           <div className={styles["fields"]}>
             <div className={styles["fields--username"]}>
@@ -24,7 +27,31 @@ const Login = () => {
               <input
                 type="text"
                 class={styles["fields__input"]}
-                placeholder="Username/Email"
+                placeholder="Username"
+                id=""
+                spellcheck="false"
+              />
+            </div>
+            <div className={styles["fields--username"]}>
+              <div className={`${styles["fields--icon"]}`}>
+                <HiOutlineMail />
+              </div>
+              <input
+                type="text"
+                class={styles["fields__input"]}
+                placeholder="Email"
+                id=""
+                spellcheck="false"
+              />
+            </div>
+            <div className={styles["fields--username"]}>
+              <div className={`${styles["fields--icon"]}`}>
+                <MdOutlinePhoneIphone />
+              </div>
+              <input
+                type="text"
+                class={styles["fields__input"]}
+                placeholder="Phone"
                 id=""
                 spellcheck="false"
               />
@@ -41,27 +68,35 @@ const Login = () => {
                 autocomplete="off"
               />
             </div>
+            <div className={styles["fields--username"]}>
+              <div className={`${styles["fields--icon"]}`}>
+                <MdOutlineInsertInvitation />
+              </div>
+              <input
+                type="text"
+                class={styles["fields__input"]}
+                placeholder="Invite code"
+                id=""
+                spellcheck="false"
+              />
+            </div>
           </div>
-
           <div>
             <button className={`${styles["btn--login"]} ${styles["h3"]}`}>
-              Sign In
+              Create account
             </button>
           </div>
         </div>
         <div className={styles["login__container--caption"]}>
-          <Link href="/signup">
-            <a className={styles["caption"]}>Forgot password?</a>
-          </Link>
           <span className={styles["caption"]}>
-            <strong>&nbsp;Or&nbsp;</strong>
+            <strong>&nbsp;Already have an account?&nbsp;</strong>
           </span>
-          <Link href="/signup">
-            <a className={styles["caption"]}>Sign Up</a>
+          <Link href="/login">
+            <a className={styles["caption"]}>Login In</a>
           </Link>
         </div>
       </div>
     </div>
   );
 };
-export default Login;
+export default SignUp;

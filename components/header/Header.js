@@ -69,7 +69,7 @@ const Header = ({}) => {
           </a>
         </li>
         <li className={`${styles["nav-1"]} ${styles["nav__item"]}`}>
-          <a href="#" className={`${styles["nav-1"]} ${styles["btn"]}`}>
+          <a href="/signup" className={`${styles["nav-1"]} ${styles["btn"]}`}>
             sign up
           </a>
         </li>

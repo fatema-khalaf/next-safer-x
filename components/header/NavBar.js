@@ -32,18 +32,19 @@ const ModalOverlay = ({ state, onClose }) => {
         <div className={styles["toggle-view-lg"]}>
           <ul>
             <li className={`${styles["nav-2"]} ${styles["nav__item"]}`}>
-              <a href="#" className={styles["nav__link"]}>
-                Login
-              </a>
+              <Link href="/login">
+                <a className={styles["nav__link"]}>Login</a>
+              </Link>
             </li>
             <li className={`${styles["nav-2"]} ${styles["nav__item"]}`}>
-              <a
-                href="#"
-                className={styles["btn"]}
-                style={{ padding: "1.6rem 1.2rem", width: "100%" }}
-              >
-                Sign up
-              </a>
+              <Link href="/signup">
+                <a
+                  className={styles["btn"]}
+                  style={{ padding: "1.6rem 1.2rem", width: "100%" }}
+                >
+                  Sign up
+                </a>
+              </Link>
             </li>
           </ul>
         </div>
