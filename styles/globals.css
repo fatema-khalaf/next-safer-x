@@ -40,7 +40,7 @@ a{
 
 /* for multi theme add color here */
 [data-theme='dark'] {
-  --bg-modern: #fafafa;
+  --bg-second-color: #fafafa;
   --main-color: #fcd535;
   --second-color: #1a1b1f;
   --second-color-a: #1a1b1f1a;
