@@ -7,7 +7,7 @@ export default function Index() {
   return (
     <div>
       <Head>
-        <title>Home | Sign Up</title>
+        <title>Sign Up | Eco-TX</title>
         <link rel="icon" href="/fav-icon.png" />
       </Head>
       <SignUp />
