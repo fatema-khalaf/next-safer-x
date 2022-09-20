@@ -4,10 +4,12 @@ import CardSection from "../components/cards/cardsSection";
 import Footer from "../components/footer/footer";
 import LogoHeader from "../components/header/LogoHeader";
 import Banner from "../components/hero/banner";
-import PopularMarket from "../components/market/popularMarket";
+import PopularMarket from "../components/market/MarketsTable";
 import Card from "../components/UI/Card";
 import TextScroll from "../components/UI/TextScroll";
 import MainLayout from "../layouts/mainLayout";
+import { items } from "../DummyData/PopularMarketsData";
+import PopularMarketSection from "../sections/PopularMarketSection";
 
 export default function Home() {
   return (
@@ -18,7 +20,7 @@ export default function Home() {
       </Head>
       <Banner />
       <TextScroll />
-      <PopularMarket />
+      <PopularMarketSection />
       <CardSection />
       {/* <Footer /> */}
       {/* <Apps /> */}

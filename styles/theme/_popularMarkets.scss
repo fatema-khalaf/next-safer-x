@@ -5,6 +5,7 @@
     justify-content: space-around;
     flex-direction: row;
     width: 100%;
+    margin: 3rem 0;
     background-color: $bg-main-color;
     // -ms-overflow-style: none; /* IE and Edge */
     // scrollbar-width: none; /* Firefox */
@@ -35,6 +36,18 @@
         padding: 0 2.5rem;
         border-spacing: 0;
         margin-bottom: 2rem;
+        &--title {
+            padding: 1rem 4.1rem;
+            @media only screen and (max-width: $bp-medium) {
+                padding: 1rem 2.6rem;
+            }
+        }
+        &--link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+        }
         @media only screen and (max-width: $bp-medium) {
             padding: 0 1rem;
         }

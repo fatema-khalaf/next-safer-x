@@ -49,6 +49,15 @@
     // font-weight: 300;
     // color: black;
 }
+.h4 {
+    font-family: $color-font-primary;
+    font-weight: 900;
+    font-size: 3.5rem;
+    text-align: start;
+    white-space: nowrap;
+    text-transform: capitalize;
+    color: $second-color !important;
+}
 .btn_text {
 }
 // .h3 {

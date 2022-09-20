@@ -24,29 +24,7 @@ export const items = [
   {
     id: 1,
     title: "Markets",
-    link: "#",
-    subMenu: [
-      {
-        id: 10,
-        title: "Market sub 1",
-        link: "#",
-      },
-      {
-        id: 11,
-        title: "Market sub 2",
-        link: "#",
-      },
-      {
-        id: 12,
-        title: "Market sub 3",
-        link: "#",
-      },
-      {
-        id: 13,
-        title: "Market sub 4",
-        link: "#",
-      },
-    ],
+    link: "/markets",
   },
   {
     id: 2,
