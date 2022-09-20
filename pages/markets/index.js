@@ -1,7 +1,7 @@
 import Head from "next/head";
-import MarketsTable from "../../components/market/MarketsTable";
 import MainLayout from "../../layouts/MainLayout";
-import { items } from "../../DummyData/PopularMarketsData";
+import { rows, columns } from "../../DummyData/PopularMarketsData";
+import { DataTable } from "../../components/table/DataTable";
 
 export default function Index() {
   return (
@@ -10,7 +10,7 @@ export default function Index() {
         <title> Markets | Eco-TX</title>
         <link rel="icon" href="/fav-icon.png" />
       </Head>
-      <MarketsTable items={items} />
+      <DataTable rows={rows} columns={columns} withFilters={true} />
     </div>
   );
 }
