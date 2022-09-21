@@ -33,7 +33,10 @@ const Footer = () => {
         <div className={styles["footer__nav"]}>
           {items.map((item, index) => (
             <div className={styles["footer__nav--list"]} key={index}>
-              <h6 className={styles["body-2"]} style={{ paddingLeft: "0rem" }}>
+              <h6
+                className={styles["body-2"]}
+                style={{ paddingInlineStart: "0rem" }}
+              >
                 {item.title}
               </h6>
               {item.subMenu.map((subItem, index) => (

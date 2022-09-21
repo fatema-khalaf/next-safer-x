@@ -3,12 +3,14 @@ import styles from "../../styles/theme/main.module.scss";
 import { BsMoonStarsFill } from "react-icons/bs";
 import { items } from "../../DummyData/NavbarItems";
 import { useState } from "react";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { AiOutlineMenu } from "react-icons/ai";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import NavBar from "./NavBar";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 const Header = (props) => {
   const [show, setShow] = useState(false);
@@ -16,7 +18,8 @@ const Header = (props) => {
     setShow(false);
   };
 
-  let router = useRouter();
+  const router = useRouter();
+  const { t } = useTranslation("common");
   return (
     <div className={styles["header"]}>
       <h1> {props.locale}</h1>
@@ -53,7 +56,11 @@ const Header = (props) => {
                             className={`${styles["nav-1"]}`}
                             style={{ display: "none" }}
                           >
-                            <FaArrowRight />
+                            {router.locale === "ar" ? (
+                              <FaArrowLeft />
+                            ) : (
+                              <FaArrowRight />
+                            )}
                           </span>
                         </span>
                       </a>
@@ -69,18 +76,18 @@ const Header = (props) => {
       <ul className={`${styles["nav"]} ${styles["nav-right"]}`}>
         <li className={`${styles["nav-1"]} ${styles["nav__item"]}`}>
           <a href="/login" className={styles["nav__link"]}>
-            Login
+            {t("login")}
           </a>
         </li>
         <li className={`${styles["nav-1"]} ${styles["nav__item"]}`}>
           <a href="/signup" className={`${styles["nav-1"]} ${styles["btn"]}`}>
-            sign up
+            {t("common:signup")}
           </a>
         </li>
 
         <li className={`${styles["nav-1"]} ${styles["nav__item"]}`}>
           <a href="#" className={styles["nav__link"]}>
-            Download
+            {t("common:download")}
           </a>
         </li>
         <li className={`${styles["nav-1"]} ${styles["nav__item--side"]}`}>
@@ -110,7 +117,7 @@ const Header = (props) => {
           className={`${styles["nav__link"]} ${styles["icon"]}`}
           onClick={() => setShow(true)}
         >
-          <HiOutlineMenuAlt3 />
+          <AiOutlineMenu />
         </li>
         <NavBar state={show ? "open" : "close"} onClose={handleClose} />
       </ul>

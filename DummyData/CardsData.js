@@ -14,7 +14,8 @@ export const cards = [
   {
     title: "COMMUNITY TRADING MODEL",
     description:
-      "build communities, directly connect customers, make traditional business management more open, and achieve a wider range of business connections.",
+      // "build communities, directly connect customers, make traditional business management more open, and achieve a wider range of business connections.",
+      "يتبنى محرك مطابقة المعاملات المطور ذاتيًا هندسة الكتلة الموزعة المتقدمة وأساليب تطوير الخدمات الدقيقة. دعم أكثر من 3 ملايين معاملة في الثانية في الوقت الحالي. ",
     imageUrl: "/images/trading.png",
   },
 ];

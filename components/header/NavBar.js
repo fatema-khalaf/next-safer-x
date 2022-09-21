@@ -5,6 +5,8 @@ import { items } from "../../DummyData/NavbarItems";
 import { useEffect, useRef, createRef } from "react";
 import Portal from "../../HOC/Portal";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 const ModalOverlay = ({ state, onClose }) => {
   const showSub = (e) => {
@@ -12,15 +14,25 @@ const ModalOverlay = ({ state, onClose }) => {
     subMenu.style.display = subMenu.style.display === "none" ? "flex" : "none";
   };
 
+  const router = useRouter();
+  const { t } = useTranslation();
+  console.log(state !== "open");
   return (
     <div
+      style={{
+        flexDirection: `${router.locale === "ar" && "row"}`,
+      }}
       className={`${styles["side-menu-holder"]} ${
         styles[`side-menu-holder__${state}`]
       }`}
     >
       <div
         className={`${styles["side-menu-holder__content"]} ${
-          styles[`side-menu-holder__content__${state}`]
+          styles[
+            `side-menu-holder__content__${state}${
+              router.locale === "ar" ? "--left" : ""
+            }`
+          ]
         }`}
       >
         <div
@@ -33,7 +45,7 @@ const ModalOverlay = ({ state, onClose }) => {
           <ul>
             <li className={`${styles["nav-2"]} ${styles["nav__item"]}`}>
               <Link href="/login">
-                <a className={styles["nav__link"]}>Login</a>
+                <a className={styles["nav__link"]}> {t("common:login")}</a>
               </Link>
             </li>
             <li className={`${styles["nav-2"]} ${styles["nav__item"]}`}>
@@ -42,7 +54,7 @@ const ModalOverlay = ({ state, onClose }) => {
                   className={styles["btn"]}
                   style={{ padding: "1.6rem 1.2rem", width: "100%" }}
                 >
-                  Sign up
+                  {t("common:signup")}
                 </a>
               </Link>
             </li>
@@ -93,13 +105,21 @@ const ModalOverlay = ({ state, onClose }) => {
           <ul>
             <li className={`${styles["nav-1"]} ${styles["nav__item"]}`}>
               <a href="#" className={styles["nav__link"]}>
-                Download
+                {t("common:download")}
               </a>
             </li>
             <li className={`${styles["nav-1"]} ${styles["nav__item"]}`}>
-              <a href="#" className={styles["nav__link"]}>
-                English
-              </a>
+              {router.locales.map((locale) => (
+                <Link href={router.asPath} key={locale} locale={locale}>
+                  <a className={styles["nav__link"]}>
+                    {locale === "en"
+                      ? "English"
+                      : locale === "ar"
+                      ? "العربية"
+                      : "other"}
+                  </a>
+                </Link>
+              ))}
             </li>
             <li className={`${styles["nav-1"]} ${styles["nav__item"]}`}>
               <a

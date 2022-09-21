@@ -3,13 +3,15 @@ import styles from "../styles/theme/main.module.scss";
 import MarketsTable from "../components/market/MarketsTable";
 import { items, rows, columns } from "../DummyData/PopularMarketsData";
 import { DataTable } from "../components/table/DataTable";
+import { useTranslation } from "next-i18next";
 
 const PopularMarketSection = () => {
+  const { t } = useTranslation();
   return (
     <div className={styles["popular__market"]}>
       <div className={styles["popular__market--container"]}>
         <div className={styles["popular__market--container--title"]}>
-          <div className={styles["h4"]}>Popular markets</div>
+          <div className={styles["h4"]}>{t("common:popular_markets")}</div>
         </div>
         {/* <MarketsTable items={items} /> */}
         <DataTable rows={rows} columns={columns} rowsPerPage={8} />

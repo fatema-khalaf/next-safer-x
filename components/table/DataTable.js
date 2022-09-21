@@ -139,7 +139,10 @@ export const DataTable = ({ columns, rows, withFilters, rowsPerPage }) => {
                           >
                             <img
                               src={row[column.accessor]?.image}
-                              style={{ width: "3.2rem", marginRight: "1.6rem" }}
+                              style={{
+                                width: "3.2rem",
+                                marginInlineEnd: "1.6rem",
+                              }}
                             />
                             <div>
                               <span>{row[column.accessor]?.name}</span>
