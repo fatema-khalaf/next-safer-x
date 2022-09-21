@@ -8,14 +8,18 @@ import { TiArrowSortedDown } from "react-icons/ti";
 import { FaArrowRight } from "react-icons/fa";
 import NavBar from "./NavBar";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-const Header = ({}) => {
+const Header = (props) => {
   const [show, setShow] = useState(false);
   const handleClose = () => {
     setShow(false);
   };
+
+  let router = useRouter();
   return (
     <div className={styles["header"]}>
+      <h1> {props.locale}</h1>
       <Link href="/">
         <a>
           <div className={styles["logo"]}>
@@ -80,9 +84,17 @@ const Header = ({}) => {
           </a>
         </li>
         <li className={`${styles["nav-1"]} ${styles["nav__item--side"]}`}>
-          <a href="#" className={styles["nav__link"]}>
-            English
-          </a>
+          {router.locales.map((locale) => (
+            <Link href={router.asPath} key={locale} locale={locale}>
+              <a className={styles["nav__link"]}>
+                {locale === "en"
+                  ? "English"
+                  : locale === "ar"
+                  ? "العربية"
+                  : "other"}
+              </a>
+            </Link>
+          ))}
           <span>|</span>
           <a
             href="#"

@@ -1,17 +1,24 @@
 import Head from "next/head";
-import Apps from "../components/apps/Apps";
 import CardSection from "../components/cards/cardsSection";
-import Footer from "../components/footer/footer";
-import LogoHeader from "../components/header/LogoHeader";
 import Banner from "../components/hero/banner";
-import PopularMarket from "../components/market/MarketsTable";
-import Card from "../components/UI/Card";
 import TextScroll from "../components/UI/TextScroll";
 import MainLayout from "../layouts/mainLayout";
-import { items } from "../DummyData/PopularMarketsData";
 import PopularMarketSection from "../sections/PopularMarketSection";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
-export default function Home() {
+// For provide language locale in all child components
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      locale,
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}
+
+export default function Home(props) {
+  const { t } = useTranslation();
   return (
     <div>
       <Head>
@@ -19,10 +26,10 @@ export default function Home() {
         <link rel="icon" href="/fav-icon.png" />
       </Head>
       <Banner />
+      {/* <h1>{t("common:title")}</h1> */}
       <TextScroll />
       <PopularMarketSection />
       <CardSection />
-      {/* <Footer /> */}
       {/* <Apps /> */}
     </div>
     // <div className={styles.container}>
