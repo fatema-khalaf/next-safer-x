@@ -6,13 +6,13 @@ import styles from "../../styles/theme/main.module.scss";
 import { BiUpArrowAlt } from "react-icons/bi";
 import { BiDownArrowAlt } from "react-icons/bi";
 
-export const DataTable = ({ columns, rows, withFilters }) => {
+export const DataTable = ({ columns, rows, withFilters, rowsPerPage }) => {
   const [activePage, setActivePage] = useState(1);
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState({ order: "asc", orderBy: "id" });
-  const [rowsPerPage, setRowsPerPage] = useState(3); // TODO: make this dynamic
+  // const [rowsPerPage, setRowsPerPage] = useState(3); // TODO: make this dynamic
 
-  //   const rowsPerPage = 3;
+  // const rowsPerPage = 3;
 
   const filteredRows = useMemo(
     () => filterRows(rows, filters),
