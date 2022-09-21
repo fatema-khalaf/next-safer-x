@@ -5,6 +5,7 @@ import styles from "../../styles/theme/main.module.scss";
 
 import { BiUpArrowAlt } from "react-icons/bi";
 import { BiDownArrowAlt } from "react-icons/bi";
+import Link from "next/link";
 
 export const DataTable = ({ columns, rows, withFilters, rowsPerPage }) => {
   const [activePage, setActivePage] = useState(1);
@@ -121,32 +122,41 @@ export const DataTable = ({ columns, rows, withFilters, rowsPerPage }) => {
           <tbody>
             {calculatedRows.map((row) => {
               return (
-                <tr key={row.id} className={styles["table-row"]}>
-                  {columns.map((column) => {
-                    return column.accessor === "pair" ? (
-                      <td>
-                        <div
-                          className={`${styles["body-2"]} ${styles["table-row__img"]}`}
-                        >
-                          <img
-                            src={row[column.accessor]?.image}
-                            style={{ width: "3.2rem", marginRight: "1.6rem" }}
-                          />
-                          <div>
-                            <span>{row[column.accessor]?.name}</span>
-                            <span className={styles["caption"]}>
-                              &nbsp;{row[column.accessor]?.caption}
-                            </span>
+                <Link
+                  href={{
+                    pathname: "/exchange",
+                    query: {
+                      id: row.id,
+                    },
+                  }}
+                >
+                  <tr key={row.id} className={styles["table-row"]}>
+                    {columns.map((column) => {
+                      return column.accessor === "pair" ? (
+                        <td>
+                          <div
+                            className={`${styles["body-2"]} ${styles["table-row__img"]}`}
+                          >
+                            <img
+                              src={row[column.accessor]?.image}
+                              style={{ width: "3.2rem", marginRight: "1.6rem" }}
+                            />
+                            <div>
+                              <span>{row[column.accessor]?.name}</span>
+                              <span className={styles["caption"]}>
+                                &nbsp;{row[column.accessor]?.caption}
+                              </span>
+                            </div>
                           </div>
-                        </div>
-                      </td>
-                    ) : (
-                      <td key={column.accessor} className={styles["body-1"]}>
-                        {row[column.accessor]}
-                      </td>
-                    );
-                  })}
-                </tr>
+                        </td>
+                      ) : (
+                        <td key={column.accessor} className={styles["body-1"]}>
+                          {row[column.accessor]}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                </Link>
               );
             })}
           </tbody>
