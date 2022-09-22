@@ -6,6 +6,7 @@ import MainLayout from "../layouts/mainLayout";
 import PopularMarketSection from "../sections/PopularMarketSection";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import ReactPuzzleConfirm from "../components/ReactPuzzleConfirm";
 
 // For provide language locale in all child components
 export async function getStaticProps({ locale }) {
@@ -30,6 +31,18 @@ export default function Home(props) {
       <TextScroll />
       <PopularMarketSection />
       <CardSection />
+      <ReactPuzzleConfirm
+        onClose={() => setShowModal(false)}
+        onSuccess={() => setShowModal(false)}
+        onFail={() => console.log("failed")}
+        title="Please fit the puzzle piece carefully"
+        sliderTitle="Slide to complete the puzzle"
+        failMessage="Error"
+        successMessage="Success"
+        closeButtonLabel="Close"
+        refrefButtonLabel="Refresh"
+        disableRefreshIdleState={false}
+      />
       {/* <Apps /> */}
     </div>
     // <div className={styles.container}>
