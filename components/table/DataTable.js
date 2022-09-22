@@ -145,7 +145,9 @@ export const DataTable = ({ columns, rows, withFilters, rowsPerPage }) => {
                               }}
                               loading="lazy"
                             />
-                            <div>
+                            <div
+                              style={{ display: "flex", alignItems: "center" }}
+                            >
                               <span>{row[column.accessor]?.name}</span>
                               <span className={styles["caption"]}>
                                 &nbsp;{row[column.accessor]?.caption}

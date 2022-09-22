@@ -5,7 +5,10 @@
     width: 100%;
     justify-content: flex-end;
     align-items: center;
-
+    padding-inline-end: 5rem;
+    @media only screen and (max-width: $bp-largest) {
+        padding: 1rem;
+    }
     &--btn {
         border: none;
         outline: none;

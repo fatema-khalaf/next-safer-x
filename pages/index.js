@@ -32,8 +32,8 @@ export default function Home(props) {
       <PopularMarketSection />
       <CardSection />
       <ReactPuzzleConfirm
-        onClose={() => setShowModal(false)}
-        onSuccess={() => setShowModal(false)}
+        // onClose={() => setShowModal(false)}
+        // onSuccess={() => setShowModal(false)}
         onFail={() => console.log("failed")}
         title="Please fit the puzzle piece carefully"
         sliderTitle="Slide to complete the puzzle"

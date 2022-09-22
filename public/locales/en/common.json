@@ -5,5 +5,7 @@
     "login":"login",
     "signup":"sign up",
     "download":"download",
-    "get_started":"get started"
+    "get_started":"get started",
+    "page":"Page",
+    "of":"of"
 } 

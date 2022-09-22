@@ -5,5 +5,7 @@
     "login":"تسجيل الدخول",
     "signup":"إنشاء حساب",
     "download":"تحميل",
-    "get_started":"البدء"
+    "get_started":"البدء",
+    "page":"صفحة",
+    "of":"من"
 }
