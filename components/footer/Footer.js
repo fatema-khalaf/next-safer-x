@@ -11,7 +11,7 @@ const Footer = () => {
     <div className={styles["footer--section"]}>
       <div className={styles["footer"]}>
         <div className={styles["footer__logo"]}>
-          <img src="/images/logo.png" />
+          <img src="/images/logo.png" loading="lazy" />
           <div className={styles["social--links"]}>
             <a>
               <BsFacebook />

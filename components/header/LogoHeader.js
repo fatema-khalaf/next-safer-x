@@ -8,7 +8,11 @@ const LogoHeader = ({}) => {
       <Link href="/">
         <a>
           <div className={styles["logo"]}>
-            <img src="/images/logo.png" className={styles["logo__img"]} />
+            <img
+              src="/images/logo.png"
+              className={styles["logo__img"]}
+              loading="lazy"
+            />
           </div>
         </a>
       </Link>

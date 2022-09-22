@@ -143,6 +143,7 @@ export const DataTable = ({ columns, rows, withFilters, rowsPerPage }) => {
                                 width: "3.2rem",
                                 marginInlineEnd: "1.6rem",
                               }}
+                              loading="lazy"
                             />
                             <div>
                               <span>{row[column.accessor]?.name}</span>
@@ -180,6 +181,7 @@ export const DataTable = ({ columns, rows, withFilters, rowsPerPage }) => {
               alt="empty content"
               src="/images/no_data.svg"
               style={{ maxWidth: "20rem" }}
+              loading="lazy"
             />
             <p className={styles["caption"]}>No results</p>
           </div>

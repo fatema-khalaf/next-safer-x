@@ -47,7 +47,7 @@ const Apps = () => {
         </div>
       </div>
       <div className={styles["apps--image"]}>
-        <img src="images/phone.png" alt="phone" />
+        <img src="images/phone.png" alt="phone" loading="lazy" />
       </div>
     </div>
   );

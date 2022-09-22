@@ -7,7 +7,7 @@ const Login = () => {
     <div className={styles["login--page"]}>
       <div className={styles["login__container"]}>
         <div className={styles["login__container--image"]}>
-          <img src="/images/logo.png" />
+          <img src="/images/logo.png" loading="lazy" />
         </div>
         <div style={{ textAlign: "center", width: "100%" }}>
           <h6 className={styles["h3"]} style={{ margin: "2rem" }}>
