@@ -1,14 +1,21 @@
+// Page title
 import Head from "next/head";
+// Layout
+import MainLayout from "../layouts/mainLayout";
+// Page sections
 import CardSection from "../components/cards/cardsSection";
 import Banner from "../components/hero/banner";
 import TextScroll from "../components/UI/TextScroll";
-import MainLayout from "../layouts/mainLayout";
 import PopularMarketSection from "../sections/PopularMarketSection";
+// Multi lang
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+// Toaster
 import ReactPuzzleConfirm from "../components/ReactPuzzleConfirm";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-// For provide language locale in all child components
+// To provide language locale in all child components
 export async function getStaticProps({ locale }) {
   return {
     props: {
@@ -20,6 +27,18 @@ export async function getStaticProps({ locale }) {
 
 export default function Home(props) {
   const { t } = useTranslation();
+  // Toaster function
+  const notify = () =>
+    toast.info("🦄 Wow so easy!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
   return (
     <div>
       <Head>
@@ -27,10 +46,13 @@ export default function Home(props) {
         <link rel="icon" href="/fav-icon.png" />
       </Head>
       <Banner />
-      {/* <h1>{t("common:title")}</h1> */}
       <TextScroll />
       <PopularMarketSection />
       <CardSection />
+      <div>
+        <button onClick={notify}>Notify!</button>
+        <ToastContainer />
+      </div>
       <ReactPuzzleConfirm
         // onClose={() => setShowModal(false)}
         // onSuccess={() => setShowModal(false)}

@@ -65,7 +65,7 @@ export const DataTable = ({ columns, rows, withFilters, rowsPerPage }) => {
 
   return (
     <>
-      <div className={styles["dataTable__container"]}>
+      <div className={styles.dataTable__container}>
         <table className={styles["popular__market--container"]}>
           <thead>
             <tr style={{ padding: "1.6rem" }}>
