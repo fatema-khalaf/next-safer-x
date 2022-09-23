@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "../../styles/captcha/index.module.scss";
+import mains from "../../styles/theme/main.module.scss";
 
 function ReactPuzzleConfirm({
   onClose = () => console.log("close"),
@@ -8,8 +9,8 @@ function ReactPuzzleConfirm({
   onFail = () => console.log("fail"),
   title = "Please fit the puzzle piece carefully",
   sliderTitle = "Slide to complete the puzzle",
-  failMessage = "Error",
-  successMessage = "Success",
+  failMessage = "Confirmation failed",
+  successMessage = "Confirmation passed",
   closeButtonLabel = "Close",
   refrefButtonLabel = "Refresh",
   disableRefreshIdleState = true,
@@ -54,11 +55,13 @@ function ReactPuzzleConfirm({
     showPuzzle && (
       <div className={styles["react-puzzle-confirm-modal"]}>
         <div onClick={onClose} style={{ width: "100%", height: "100%" }}></div>
-        <div
-          className={styles["react-puzzle-confirm"]}
-          style={{ position: "absolute" }}
-        >
-          <h1 className={styles["react-puzzle-confirm-title"]}>{title}</h1>
+        <div className={styles["react-puzzle-confirm"]}>
+          <h1
+            className={mains.h5}
+            style={{ fontSize: "1.8rem", marginBottom: "1.4rem" }}
+          >
+            {title}
+          </h1>
           <div className={styles["react-puzzle-confirm-body"]}>
             <div className={styles["react-puzzle-confirm-puzzle-wrapper"]}>
               <div className={styles["react-puzzle-confirm-puzzle"]}>
@@ -123,28 +126,30 @@ function ReactPuzzleConfirm({
               min="0"
               max={maxValue}
             />
-            <div className={styles["react-puzzle-confirm-slider-note"]}>
+            <div className={mains.caption} style={{ padding: "0.5rem 0" }}>
               {sliderTitle}
             </div>
           </div>
 
           <div
-            className={`${styles["react-puzzle-confirm-state"]} ${
-              isFailed ? "react-puzzle-confirm-state--fail" : ""
-            }`}
+            className={mains.caption}
+            style={{ color: isFailed ? "red" : "green" }}
+            // className={`${styles["react-puzzle-confirm-state"]} ${
+            //   isFailed ? "react-puzzle-confirm-state--fail" : ""
+            // }`}
           >
             &nbsp; {status !== "Idle" && statusMessage}
           </div>
 
           <div className={styles["react-puzzle-confirm-button-group"]}>
             <button
-              className={`${styles["react-puzzle-confirm-button"]} ${styles["react-puzzle-confirm-button--secondary"]}`}
+              className={mains["btn--danger--out--line"]}
               onClick={onClose}
             >
               {closeButtonLabel}
             </button>
             <button
-              className={styles["react-puzzle-confirm-button"]}
+              className={mains["btn"]}
               disabled={!isFailed && disableRefreshIdleState}
               onClick={() => {
                 setRandomValue(randomValueCreator());

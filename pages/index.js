@@ -66,8 +66,8 @@ export default function Home(props) {
         onFail={() => console.log("failed")}
         title="Please fit the puzzle piece carefully"
         sliderTitle="Slide to complete the puzzle"
-        failMessage="Error"
-        successMessage="Success"
+        // failMessage="Error"
+        // successMessage="Success"
         closeButtonLabel="Close"
         refrefButtonLabel="Refresh"
         disableRefreshIdleState={false}
