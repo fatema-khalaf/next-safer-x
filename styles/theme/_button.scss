@@ -21,6 +21,28 @@
         @extend .btn;
         padding: 0.9rem 3rem;
     }
+    &--danger--out--line {
+        @extend .btn;
+        background-color: transparent;
+        border: 1px solid $dec-color;
+        color: $dec-color;
+        font-size: 1.4rem;
+        &:hover {
+            background-color: $dec-color;
+            color: $bg-main-color;
+        }
+    }
+    &--out--line {
+        @extend .btn;
+        background-color: transparent;
+        border: 1px solid $success-color;
+        color: $success-color;
+        font-size: 1.4rem;
+        &:hover {
+            background-color: $success-color;
+            color: $bg-main-color;
+        }
+    }
     &:hover {
         opacity: 0.8;
     }

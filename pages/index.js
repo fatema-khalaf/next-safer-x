@@ -14,6 +14,8 @@ import { useTranslation } from "next-i18next";
 import ReactPuzzleConfirm from "../components/ReactPuzzleConfirm";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ConfirmContainer from "../components/confirmation_window/ConfirmContainer";
+import { useState } from "react";
 
 // To provide language locale in all child components
 export async function getStaticProps({ locale }) {
@@ -39,6 +41,9 @@ export default function Home(props) {
       progress: undefined,
     });
 
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [showPuzzle, setShowPuzzle] = useState(false);
+
   return (
     <div>
       <Head>
@@ -53,9 +58,11 @@ export default function Home(props) {
         <button onClick={notify}>Notify!</button>
         <ToastContainer />
       </div>
+      <button onClick={() => setShowPuzzle(true)}>Puzzle!</button>
       <ReactPuzzleConfirm
-        // onClose={() => setShowModal(false)}
-        // onSuccess={() => setShowModal(false)}
+        showPuzzle={showPuzzle}
+        onClose={() => setShowPuzzle(false)}
+        onSuccess={() => setShowPuzzle(false)}
         onFail={() => console.log("failed")}
         title="Please fit the puzzle piece carefully"
         sliderTitle="Slide to complete the puzzle"
@@ -64,6 +71,12 @@ export default function Home(props) {
         closeButtonLabel="Close"
         refrefButtonLabel="Refresh"
         disableRefreshIdleState={false}
+      />
+      <button onClick={() => setShowConfirmation(true)}>confirm!</button>
+      <ConfirmContainer
+        showConfirmation={showConfirmation}
+        onClose={() => setShowConfirmation(false)}
+        onConfirm={() => setShowConfirmation(false)}
       />
       {/* <Apps /> */}
     </div>

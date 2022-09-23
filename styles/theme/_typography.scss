@@ -58,6 +58,15 @@
     text-transform: capitalize;
     color: $second-color !important;
 }
+.h5 {
+    font-family: $font-secondary;
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 600;
+    color: $color-font-primary;
+    text-transform: capitalize;
+    text-align: center;
+}
 .btn_text {
 }
 // .h3 {

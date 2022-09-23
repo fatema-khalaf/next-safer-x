@@ -1,3 +1,4 @@
+@import "../theme/base";
 $green: #093545;
 $black: #03060b;
 $navy: #1d0f77;
@@ -71,7 +72,7 @@ $shape: rgba(209, 61, 61, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: $modal--color;
   }
 
   &-title {

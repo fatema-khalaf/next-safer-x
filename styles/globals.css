@@ -14,6 +14,7 @@ a{
     text-decoration: none;
 }
 :root {
+  --modal--color:#00000080;
   --main-color: #fcd535;
   --main-color-a: #fcd43520;
   --main-color-a-dark: #fcd535a1;
@@ -27,6 +28,7 @@ a{
   --bg-forth-color: #F5F5F5;
   --bg-fifth-color: #6880e4;
   --dec-color: #F23645;
+  --success-color: #0eb50e;
   --shadow-color: #e7e7e7;
   --shadow-second-color: #cbced1;
   --input-bg-color: #e8f0fe;
