@@ -39,6 +39,18 @@ const Header = (props) => {
           <li
             className={`${styles["nav-1"]} ${styles["nav__item"]} ${styles["nav__item--toggle"]}`}
             key={item.id}
+            onMouseMove={() => {
+              const sub = document.getElementById(item.id);
+              if (
+                sub &&
+                window.innerWidth < sub.getBoundingClientRect().right
+              ) {
+                sub.style.right = "5rem";
+              }
+              if (sub && sub.getBoundingClientRect().left < 0) {
+                sub.style.left = "5rem";
+              }
+            }}
           >
             <span className={styles["nav__item--container"]}>
               <Link href={item.link}>
@@ -49,7 +61,7 @@ const Header = (props) => {
               </span>
             </span>
             {item.subMenu && (
-              <div className={styles["sub--menu"]}>
+              <div className={styles["sub--menu"]} id={item.id}>
                 <div className={styles["sub--menu__container"]}>
                   {item.subMenu.map((subItem) => (
                     <Link href={subItem.link} key={subItem.id}>
@@ -95,7 +107,7 @@ const Header = (props) => {
           </a>
         </li>
         <li className={`${styles["nav-1"]} ${styles["nav__item--side"]}`}>
-          {router.locales.map((locale) => (
+          {/* {router.locales.map((locale) => (
             <Link href={router.asPath} key={locale} locale={locale}>
               <a className={styles["nav__link"]}>
                 {locale === "en"
@@ -105,7 +117,64 @@ const Header = (props) => {
                   : "other"}
               </a>
             </Link>
-          ))}
+          ))} */}
+
+          <div
+            className={`${styles["nav-1"]} ${styles["nav__item"]} ${styles["nav__item--toggle"]}`}
+            onMouseMove={(e) => {
+              const sub = document.getElementById("lang-submenu");
+              if (
+                sub &&
+                window.innerWidth < sub.getBoundingClientRect().right
+              ) {
+                sub.style.right = "5rem";
+              }
+              if (sub && sub.getBoundingClientRect().left < 0) {
+                sub.style.left = "5rem";
+              }
+            }}
+          >
+            <span className={styles["nav__item--container"]}>
+              <div className={styles["nav__link"]}>
+                {router.locale === "en"
+                  ? "English"
+                  : router.locale === "ar"
+                  ? "العربية"
+                  : "other"}
+              </div>
+            </span>
+
+            <div className={styles["sub--menu"]} id="lang-submenu">
+              <div className={styles["sub--menu__container"]}>
+                {router.locales.map((locale) => (
+                  <Link href={router.asPath} key={locale} locale={locale}>
+                    <a>
+                      <span className={styles["sub--menu__container--item"]}>
+                        <div className={styles["nav-1"]}>
+                          {locale === "en"
+                            ? "English"
+                            : locale === "ar"
+                            ? "العربية"
+                            : "other"}
+                        </div>
+                        <span
+                          className={`${styles["nav-1"]}`}
+                          style={{ display: "none" }}
+                        >
+                          {router.locale === "ar" ? (
+                            <FaArrowLeft />
+                          ) : (
+                            <FaArrowRight />
+                          )}
+                        </span>
+                      </span>
+                    </a>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <span>|</span>
           <a
             href="#"

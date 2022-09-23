@@ -30,7 +30,6 @@ export const items = [
     id: 2,
     title: "Exchange",
     link: "/exchange",
-    subMenu: [],
   },
   {
     id: 3,
@@ -46,6 +45,23 @@ export const items = [
     id: 5,
     title: "coin info",
     link: "#",
+    subMenu: [
+      {
+        id: 10,
+        title: "home sub 1",
+        link: "#",
+      },
+      {
+        id: 20,
+        title: "home sub 2",
+        link: "#",
+      },
+      {
+        id: 30,
+        title: "home sub 3",
+        link: "#",
+      },
+    ],
   },
 ];
 export const sidItems = [
