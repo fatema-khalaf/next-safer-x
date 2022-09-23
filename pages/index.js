@@ -40,8 +40,10 @@ export default function Home(props) {
       draggable: true,
       progress: undefined,
     });
-
+  // Confirmation message
   const [showConfirmation, setShowConfirmation] = useState(false);
+
+  // Confirmation puzzle
   const [showPuzzle, setShowPuzzle] = useState(false);
 
   return (

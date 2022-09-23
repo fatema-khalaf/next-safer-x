@@ -29,13 +29,13 @@ export const items = [
   {
     id: 2,
     title: "Exchange",
-    link: "#",
+    link: "/exchange",
     subMenu: [],
   },
   {
     id: 3,
     title: "Launchpad",
-    link: "#",
+    link: "/lanchpad",
   },
   {
     id: 4,
