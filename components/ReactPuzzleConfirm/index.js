@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import styles from "../../styles/captcha/index.module.scss";
 
 function ReactPuzzleConfirm({
-  // onSuccess = () => console.log("success"),
+  onClose = () => console.log("close"),
+  onSuccess = () => console.log("success"),
+  showPuzzle,
   onFail = () => console.log("fail"),
   title = "Please fit the puzzle piece carefully",
   sliderTitle = "Slide to complete the puzzle",
@@ -26,7 +28,7 @@ function ReactPuzzleConfirm({
   const [value, setValue] = useState(0);
   const [status, setStatus] = useState("Idle");
   const [randomValue, setRandomValue] = useState(randomValueCreator());
-  const [showModal, setShowModal] = useState(true);
+  // const [showModal, setShowModal] = useState(true);
 
   const handleAttempt = () => {
     if (value === randomValue) {
@@ -38,18 +40,18 @@ function ReactPuzzleConfirm({
     }
   };
 
-  const onClose = () => {
-    setShowModal(false);
-  };
-  const onSuccess = () => {
-    setShowModal(false);
-  };
+  // const onClose = () => {
+  //   setShowModal(false);
+  // };
+  // const onSuccess = () => {
+  //   setShowModal(false);
+  // };
 
   const isFailed = status === "Failed";
   const statusMessage = isFailed ? failMessage : successMessage;
 
   return (
-    showModal && (
+    showPuzzle && (
       <div className={styles["react-puzzle-confirm-modal"]}>
         <div onClick={onClose} style={{ width: "100%", height: "100%" }}></div>
         <div
