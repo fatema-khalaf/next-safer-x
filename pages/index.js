@@ -5,6 +5,7 @@ import MainLayout from "../layouts/mainLayout";
 // Page sections
 import CardSection from "../components/cards/cardsSection";
 import Banner from "../components/hero/banner";
+import Apps from "../components/apps/Apps";
 import TextScroll from "../components/UI/TextScroll";
 import PopularMarketSection from "../sections/PopularMarketSection";
 // Multi lang
@@ -80,7 +81,7 @@ export default function Home(props) {
         onClose={() => setShowConfirmation(false)}
         onConfirm={() => setShowConfirmation(false)}
       />
-      {/* <Apps /> */}
+      <Apps />
     </div>
     // <div className={styles.container}>
     //   <Head>
