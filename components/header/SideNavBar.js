@@ -7,26 +7,16 @@ import Portal from "../../HOC/Portal";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import { TiArrowSortedDown } from "react-icons/ti";
 
-const ModalOverlay = ({ state, onClose }) => {
+const SideNavBarContent = ({ state, onClose }) => {
   // show sub menu of each menu item
   const showSub = (e) => {
-    console.log(e);
     const subMenu = e.target.nextElementSibling;
-    subMenu.style.display = subMenu.style.display === "none" ? "flex" : "none";
+    e.target.classList.toggle(styles["active-menu-item"]);
+    subMenu.classList.toggle(`${styles["view__sub"]}`);
+    // subMenu.style.display = subMenu.style.display === "none" ? "flex" : "none";
   };
-  // const showSubw = (e) => {
-  //   console.log(e);
-  //   const subMenu = e.target.nextElementSibling;
-  //   subMenu.style.display = subMenu.style.display === "none" ? "flex" : "none";
-  // };
-  // const showSub2 = (e) => {
-  //   // const sub = document.getElementById(id);
-  //   console.log(e);
-  //   // if (sub) {
-  //   //   sub.style.display = sub.style.display === "none" ? "flex" : "none";
-  //   // }
-  // };
 
   // language
   const router = useRouter();
@@ -34,9 +24,6 @@ const ModalOverlay = ({ state, onClose }) => {
 
   return (
     <div
-      style={{
-        flexDirection: `${router.locale === "ar" && "row"}`,
-      }}
       className={`${styles["side-menu-holder"]} ${
         styles[`side-menu-holder__${state}`]
       }`}
@@ -60,7 +47,12 @@ const ModalOverlay = ({ state, onClose }) => {
           <ul>
             <li className={`${styles["nav-2"]} ${styles["nav__item"]}`}>
               <Link href="/login">
-                <a className={styles["nav__link"]}> {t("common:login")}</a>
+                <a
+                  className={styles["nav__link"]}
+                  style={{ textAlign: "center" }}
+                >
+                  {t("common:login")}
+                </a>
               </Link>
             </li>
             <li className={`${styles["nav-2"]} ${styles["nav__item"]}`}>
@@ -82,10 +74,15 @@ const ModalOverlay = ({ state, onClose }) => {
                 <div key={index}>
                   <div
                     key={index}
-                    className={`${styles["nav-2"]} ${styles["nav__item"]} ${styles["nav__link"]}`}
+                    className={`${styles["nav-2"]} ${styles["nav__item"]} ${styles["nav__link"]} ${styles["side-menu-holder--item"]}`}
                     onClick={showSub}
                   >
                     {item.title}
+                    {item.subMenu && (
+                      <span style={{ display: "flex", marginLeft: ".4rem" }}>
+                        <TiArrowSortedDown />
+                      </span>
+                    )}
                   </div>
                   <div
                     className={`${styles["toggle-view-sm--sub"]} ${styles["nav-2"]}`}
@@ -123,31 +120,22 @@ const ModalOverlay = ({ state, onClose }) => {
                 {t("common:download")}
               </a>
             </li>
-            {/* <li className={`${styles["nav-2"]} ${styles["nav__item"]}`}>
-              {router.locales.map((locale) => (
-                <Link href={router.asPath} key={locale} locale={locale}>
-                  <a className={styles["nav__link"]}>
-                    {locale === "en"
-                      ? "English"
-                      : locale === "ar"
-                      ? "العربية"
-                      : "other"}
-                  </a>
-                </Link>
-              ))}
-            </li> */}
 
             <div
-              className={`${styles["nav-2"]} ${styles["nav__item"]} ${styles["nav__link"]}`}
-              onClick={() => {
+              className={`${styles["nav-2"]} ${styles["nav__item"]} ${styles["nav__link"]} ${styles["side-menu-holder--item"]}`}
+              onClick={(e) => {
+                e.target.classList.toggle(styles["active-menu-item"]);
                 const sub = document.getElementById("nbchflang");
                 if (sub) {
-                  sub.style.display =
-                    sub.style.display === "none" ? "flex" : "none";
+                  sub.classList.toggle(`${styles["view__sub"]}`);
                 }
               }}
             >
               {t("language")}
+
+              <span style={{ display: "flex", marginLeft: ".4rem" }}>
+                <TiArrowSortedDown />
+              </span>
             </div>
             <div
               id="nbchflang"
@@ -186,11 +174,11 @@ const ModalOverlay = ({ state, onClose }) => {
   );
 };
 
-const NavBar = ({ state, onClose }) => {
+const SideNavBar = ({ state, onClose }) => {
   return (
     <Portal>
-      <ModalOverlay state={state} onClose={onClose} />
+      <SideNavBarContent state={state} onClose={onClose} />
     </Portal>
   );
 };
-export default NavBar;
+export default SideNavBar;

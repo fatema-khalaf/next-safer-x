@@ -7,7 +7,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
-import NavBar from "./NavBar";
+import SideNavBar from "./SideNavBar";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -200,7 +200,7 @@ const Header = (props) => {
         >
           <AiOutlineMenu />
         </li>
-        <NavBar state={show ? "open" : "close"} onClose={handleClose} />
+        <SideNavBar state={show ? "open" : "close"} onClose={handleClose} />
       </ul>
     </div>
   );
