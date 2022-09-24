@@ -3,10 +3,10 @@ import Head from "next/head";
 // Layout
 import MainLayout from "../layouts/mainLayout";
 // Page sections
-import CardSection from "../components/cards/cardsSection";
-import Banner from "../components/hero/banner";
 import Apps from "../components/apps/Apps";
+import Banner from "../components/hero/banner";
 import TextScroll from "../components/UI/TextScroll";
+import CardSection from "../sections/cards/cardsSection";
 import PopularMarketSection from "../sections/PopularMarketSection";
 // Multi lang
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";

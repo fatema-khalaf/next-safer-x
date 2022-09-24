@@ -9,14 +9,29 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 
 const ModalOverlay = ({ state, onClose }) => {
+  // show sub menu of each menu item
   const showSub = (e) => {
+    console.log(e);
     const subMenu = e.target.nextElementSibling;
     subMenu.style.display = subMenu.style.display === "none" ? "flex" : "none";
   };
+  // const showSubw = (e) => {
+  //   console.log(e);
+  //   const subMenu = e.target.nextElementSibling;
+  //   subMenu.style.display = subMenu.style.display === "none" ? "flex" : "none";
+  // };
+  // const showSub2 = (e) => {
+  //   // const sub = document.getElementById(id);
+  //   console.log(e);
+  //   // if (sub) {
+  //   //   sub.style.display = sub.style.display === "none" ? "flex" : "none";
+  //   // }
+  // };
 
+  // language
   const router = useRouter();
   const { t } = useTranslation();
-  console.log(state !== "open");
+
   return (
     <div
       style={{
@@ -64,7 +79,7 @@ const ModalOverlay = ({ state, onClose }) => {
           <ul>
             {items.map((item, index) =>
               item.subMenu ? (
-                <>
+                <div key={index}>
                   <div
                     key={index}
                     className={`${styles["nav-2"]} ${styles["nav__item"]} ${styles["nav__link"]}`}
@@ -86,7 +101,7 @@ const ModalOverlay = ({ state, onClose }) => {
                       </Link>
                     ))}
                   </div>
-                </>
+                </div>
               ) : (
                 <li
                   key={index}
@@ -103,12 +118,12 @@ const ModalOverlay = ({ state, onClose }) => {
 
         <div className={styles["toggle-view-lg"]}>
           <ul>
-            <li className={`${styles["nav-1"]} ${styles["nav__item"]}`}>
+            <li className={`${styles["nav-2"]} ${styles["nav__item"]}`}>
               <a href="#" className={styles["nav__link"]}>
                 {t("common:download")}
               </a>
             </li>
-            <li className={`${styles["nav-1"]} ${styles["nav__item"]}`}>
+            {/* <li className={`${styles["nav-2"]} ${styles["nav__item"]}`}>
               {router.locales.map((locale) => (
                 <Link href={router.asPath} key={locale} locale={locale}>
                   <a className={styles["nav__link"]}>
@@ -120,8 +135,41 @@ const ModalOverlay = ({ state, onClose }) => {
                   </a>
                 </Link>
               ))}
-            </li>
-            <li className={`${styles["nav-1"]} ${styles["nav__item"]}`}>
+            </li> */}
+
+            <div
+              className={`${styles["nav-2"]} ${styles["nav__item"]} ${styles["nav__link"]}`}
+              onClick={() => {
+                const sub = document.getElementById("nbchflang");
+                if (sub) {
+                  sub.style.display =
+                    sub.style.display === "none" ? "flex" : "none";
+                }
+              }}
+            >
+              {t("language")}
+            </div>
+            <div
+              id="nbchflang"
+              className={`${styles["toggle-view-sm--sub"]} ${styles["nav-2"]}`}
+            >
+              {router.locales.map((locale, index) => (
+                <Link href={router.asPath} locale={locale} key={index}>
+                  <a
+                    className={styles["nav__link"]}
+                    style={{ padding: " 1.5rem" }}
+                  >
+                    {locale === "en"
+                      ? "English"
+                      : locale === "ar"
+                      ? "العربية"
+                      : "other"}
+                  </a>
+                </Link>
+              ))}
+            </div>
+
+            <li className={`${styles["nav-2"]} ${styles["nav__item"]}`}>
               <a
                 href="#"
                 className={styles["nav__link"]}

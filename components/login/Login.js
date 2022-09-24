@@ -2,7 +2,10 @@ import styles from "../../styles/theme/main.module.scss";
 import { TiUserOutline } from "react-icons/ti";
 import { HiOutlineKey } from "react-icons/hi";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
+
 const Login = () => {
+  const { t } = useTranslation("common");
   return (
     <div className={styles["login--page"]}>
       <div className={styles["login__container"]}>
@@ -11,10 +14,10 @@ const Login = () => {
         </div>
         <div style={{ textAlign: "center", width: "100%" }}>
           <h6 className={styles["h3"]} style={{ margin: "2rem" }}>
-            LogIn
+            {t("login")}
           </h6>
           <h6 className={styles["caption"]} style={{ letterSpacing: "3px" }}>
-            Wellcome back!
+            {t("wellcome_back")}
           </h6>
           <div className={styles["fields"]}>
             <div className={styles["fields--username"]}>
@@ -23,10 +26,10 @@ const Login = () => {
               </div>
               <input
                 type="text"
-                class={styles["fields__input"]}
-                placeholder="Username/Email"
+                className={styles["fields__input"]}
+                placeholder={t("email")}
                 id=""
-                spellcheck="false"
+                spellCheck="false"
               />
             </div>
             <div className={styles["fields--password"]}>
@@ -35,29 +38,29 @@ const Login = () => {
               </div>
               <input
                 type="password"
-                class={styles["fields__input"]}
+                className={styles["fields__input"]}
                 id=""
-                placeholder="Enter password"
-                autocomplete="off"
+                placeholder={t("password")}
+                autoComplete="off"
               />
             </div>
           </div>
 
           <div>
             <button className={`${styles["btn--login"]} ${styles["h3"]}`}>
-              Sign In
+              {t("login")}
             </button>
           </div>
         </div>
         <div className={styles["login__container--caption"]}>
           <Link href="/signup">
-            <a className={styles["caption"]}>Forgot password?</a>
+            <a className={styles["caption"]}>{t("forgot_password")}</a>
           </Link>
           <span className={styles["caption"]}>
-            <strong>&nbsp;Or&nbsp;</strong>
+            <strong>&nbsp;&nbsp;{t("or")}&nbsp;&nbsp;</strong>
           </span>
           <Link href="/signup">
-            <a className={styles["caption"]}>Sign Up</a>
+            <a className={styles["caption"]}>{t("signup")}</a>
           </Link>
         </div>
       </div>

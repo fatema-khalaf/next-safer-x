@@ -1,4 +1,4 @@
-import Card from "../UI/Card";
+import Card from "../../components/UI/Card";
 import { cards } from "../../DummyData/CardSData";
 import styles from "../../styles/theme/main.module.scss";
 

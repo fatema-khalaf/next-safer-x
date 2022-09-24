@@ -41,21 +41,26 @@ const LogoHeader = ({}) => {
             }}
           >
             <span className={styles["nav__item--container"]}>
-              <div className={styles["nav__link"]}>
-                {router.locale === "en"
-                  ? "English"
-                  : router.locale === "ar"
-                  ? "العربية"
-                  : "other"}
-              </div>
+              <div className={styles["nav__link"]}>{t("language")}</div>
             </span>
 
             <div className={styles["sub--menu"]} id="lang-submenu">
-              <div className={styles["sub--menu__container"]}>
+              <div
+                className={styles["sub--menu__container"]}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  flexWrap: "nowrap",
+                }}
+              >
                 {router.locales.map((locale) => (
                   <Link href={router.asPath} key={locale} locale={locale}>
-                    <a>
-                      <span className={styles["sub--menu__container--item"]}>
+                    <a style={{ width: "100%" }}>
+                      <span
+                        className={styles["sub--menu__container--item"]}
+                        style={{ justifyContent: "center" }}
+                      >
                         <div className={styles["nav-1"]}>
                           {locale === "en"
                             ? "English"
@@ -66,13 +71,7 @@ const LogoHeader = ({}) => {
                         <span
                           className={`${styles["nav-1"]}`}
                           style={{ display: "none" }}
-                        >
-                          {router.locale === "ar" ? (
-                            <FaArrowLeft />
-                          ) : (
-                            <FaArrowRight />
-                          )}
-                        </span>
+                        ></span>
                       </span>
                     </a>
                   </Link>

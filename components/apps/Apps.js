@@ -24,8 +24,8 @@ const Apps = () => {
               <div
                 className={`${styles["nav-1"]} ${styles["apps--text__btn--container"]}`}
               >
-                <span class="sup-title">DOWNLOAD ON</span>
-                <span class="title">Apple Store</span>
+                <span>DOWNLOAD ON</span>
+                <span>Apple Store</span>
               </div>
             </a>
           </Link>
@@ -39,8 +39,8 @@ const Apps = () => {
               <div
                 className={`${styles["nav-1"]} ${styles["apps--text__btn--container"]}`}
               >
-                <span class="sup-title">DOWNLOAD ON</span>
-                <span class="title">Google Play</span>
+                <span>DOWNLOAD ON</span>
+                <span>Google Play</span>
               </div>
             </a>
           </Link>

@@ -69,7 +69,7 @@ export const DataTable = ({ columns, rows, withFilters, rowsPerPage }) => {
         <table className={styles["popular__market--container"]}>
           <thead>
             <tr style={{ padding: "1.6rem" }}>
-              {columns.map((column) => {
+              {columns.map((column, index) => {
                 const sortIcon = () => {
                   if (column.accessor === sort.orderBy) {
                     if (sort.order === "desc") {
@@ -99,9 +99,9 @@ export const DataTable = ({ columns, rows, withFilters, rowsPerPage }) => {
             </tr>
             {withFilters && (
               <tr style={{ padding: "1.6rem" }}>
-                {columns.map((column) => {
+                {columns.map((column, index) => {
                   return (
-                    <th className={styles["body-1"]}>
+                    <th className={styles["body-1"]} key={index}>
                       <input
                         className={styles["table--search"]}
                         key={`${column.accessor}-search`}
@@ -120,9 +120,10 @@ export const DataTable = ({ columns, rows, withFilters, rowsPerPage }) => {
             )}
           </thead>
           <tbody>
-            {calculatedRows.map((row) => {
+            {calculatedRows.map((row, index) => {
               return (
                 <Link
+                  key={index}
                   href={{
                     pathname: "/exchange",
                     query: {
@@ -131,9 +132,9 @@ export const DataTable = ({ columns, rows, withFilters, rowsPerPage }) => {
                   }}
                 >
                   <tr key={row.id} className={styles["table-row"]}>
-                    {columns.map((column) => {
+                    {columns.map((column, index) => {
                       return column.accessor === "pair" ? (
-                        <td>
+                        <td key={index}>
                           <div
                             className={`${styles["body-2"]} ${styles["table-row__img"]}`}
                           >

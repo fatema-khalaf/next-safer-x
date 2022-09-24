@@ -43,6 +43,7 @@
         height: 100%;
         justify-content: space-around;
         position: relative;
+        animation: floating 3s infinite;
         @media only screen and (max-width: $bp-medium) {
             display: none;
         }
@@ -51,6 +52,7 @@
             position: absolute;
             right: 1.5rem;
             top: -6.4rem;
+            transform: translateY(-12px);
             /* height: 100%; */
             /* width: 100%; */
             max-width: 50vw;
@@ -58,5 +60,16 @@
                 display: none;
             }
         }
+    }
+}
+@keyframes floating {
+    0% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(-10px);
     }
 }

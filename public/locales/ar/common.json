@@ -8,5 +8,18 @@
     "get_started":"البدء",
     "page":"صفحة",
     "of":"من",
-    "exchange":"تداول"
+    "exchange":"تداول",
+    "language":"العربية",
+    "create_new_account":"!إنشاء حساب جديد",
+    "username":"ٌإسم المستخدم",
+    "email":"الإيميل",
+    "password":"كلمة المرور",
+    "phone":"الهاتف",
+    "invite_code":"كود الدعوة",
+    "already_have_account":"هل لديك حساب؟",
+    "create_account":"إنشاء حساب",
+    "wellcome_back":"مرحباً بكم",
+    "forgot_password":"هل نسيت كلمة المرور؟",
+    "or":"أو"
+
 }
