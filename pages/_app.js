@@ -12,6 +12,10 @@ function MyApp({ Component, pageProps }) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <div
+        id="myportal"
+        // style={{ direction: `${router.locale === "ar" ? "rtl" : "ltr"}` }}
+      />
     </div>
   );
 }
