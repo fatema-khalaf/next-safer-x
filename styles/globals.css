@@ -42,18 +42,29 @@ a{
 
 /* for multi theme add color here */
 [data-theme='dark'] {
-  --bg-second-color: #fafafa;
-  --main-color: #fcd535;
-  --second-color: #1a1b1f;
-  --second-color-a: #1a1b1f1a;
-  --bg-main-color: #1c252d;
-  --bg-second-color: #374756;
-  --bg-third-color: #FFFFFF;
-  --bg-forth-color: #F5F5F5;
+  --modal--color:#ffffff80;
+  --main-color: #e1bc2a;
+  --main-color-a: #fcd43520;
+  --main-color-a-dark: #fcd535a1;
+  --main-color-dark: #e0ac1e;
+  --second-color: #e8e8e8;
+  --second-color-a: #e8e8e81a;
+  --bg-main-color: #181A20;
+  --bg-main-color-a: #000000a3;
+  --bg-second-color: #0a0a0a;
+  --bg-third-color: #374756;
+  --bg-forth-color: #1a1a1a96;
+  --bg-fifth-color: #6880e4;
   --dec-color: #F23645;
+  --success-color: #0eb50e;
+  --shadow-color: #141212;
+  --shadow-second-color: #060606;
+  --input-bg-color: #1a1a1a96;
 
-  --color-font-body: #c3c9d4;
-  --color-font-primary: #343a40;
+  --color-font-light: #fafafa; 
+  --color-font-body: #edeff4; 
+  --color-font-caption: #f6f6f6;
+  --color-font-primary: #ffffff;
   --color-font-secondary: #E3C15A;
 }
 @media only screen and (max-width: 62.5em) {

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useContext } from "react";
 import { BsFillSunFill } from "react-icons/bs";
 import { BsMoonStarsFill } from "react-icons/bs";
@@ -34,6 +35,13 @@ export const ThemeButton = ({ title }) => {
 
 const ThemeSwitcher = ({ children }) => {
   const ctx = useContext(ThemeContext);
-  return <div data-theme={ctx.isDrakTheme ? "dark" : ""}>{children}</div>;
+  return (
+    <div
+      data-theme={ctx.isDrakTheme ? "dark" : ""}
+      style={{ backgroundColor: "var(--bg-main-color)" }}
+    >
+      {children}
+    </div>
+  );
 };
 export default ThemeSwitcher;
