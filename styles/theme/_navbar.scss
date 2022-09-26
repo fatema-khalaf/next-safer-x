@@ -290,3 +290,12 @@
 .view__sub {
     display: flex !important;
 }
+.theme--switcher {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    &:hover {
+        cursor: pointer;
+        color: $main-color;
+    }
+}

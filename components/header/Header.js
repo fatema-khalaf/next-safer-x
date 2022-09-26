@@ -1,8 +1,6 @@
-import logo from "../../public/images/logo.png";
 import styles from "../../styles/theme/main.module.scss";
-import { BsMoonStarsFill } from "react-icons/bs";
 import { items } from "../../DummyData/NavbarItems";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { FaArrowRight } from "react-icons/fa";
@@ -11,6 +9,7 @@ import SideNavBar from "./SideNavBar";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import { ThemeButtonIcon } from "../theme/ThemeSwitcher";
 
 const Header = (props) => {
   const [show, setShow] = useState(false);
@@ -109,18 +108,6 @@ const Header = (props) => {
           </a>
         </li>
         <li className={`${styles["nav-1"]} ${styles["nav__item--side"]}`}>
-          {/* {router.locales.map((locale) => (
-            <Link href={router.asPath} key={locale} locale={locale}>
-              <a className={styles["nav__link"]}>
-                {locale === "en"
-                  ? "English"
-                  : locale === "ar"
-                  ? "العربية"
-                  : "other"}
-              </a>
-            </Link>
-          ))} */}
-
           <div
             className={`${styles["nav-1"]} ${styles["nav__item"]} ${styles["nav__item--toggle"]}`}
             onMouseMove={(e) => {
@@ -137,14 +124,7 @@ const Header = (props) => {
             }}
           >
             <span className={styles["nav__item--container"]}>
-              <div className={styles["nav__link"]}>
-                {/* {router.locale === "en"
-                  ? "English"
-                  : router.locale === "ar"
-                  ? "العربية"
-                  : "other"} */}
-                {t("language")}
-              </div>
+              <div className={styles["nav__link"]}>{t("language")}</div>
             </span>
 
             <div className={styles["sub--menu"]} id="lang-submenu">
@@ -184,13 +164,7 @@ const Header = (props) => {
           </div>
 
           <span>|</span>
-          <a
-            href="#"
-            className={styles["nav__link"]}
-            style={{ height: "1.7rem" }}
-          >
-            <BsMoonStarsFill />
-          </a>
+          <ThemeButtonIcon />
         </li>
       </ul>
       <ul className={`${styles["nav"]} ${styles["toggle-menu"]}`}>

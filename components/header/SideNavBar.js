@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { TiArrowSortedDown } from "react-icons/ti";
+import { ThemeButton } from "../theme/ThemeSwitcher";
 
 const SideNavBarContent = ({ state, onClose }) => {
   // show sub menu of each menu item
@@ -158,13 +159,7 @@ const SideNavBarContent = ({ state, onClose }) => {
             </div>
 
             <li className={`${styles["nav-2"]} ${styles["nav__item"]}`}>
-              <a
-                href="#"
-                className={styles["nav__link"]}
-                style={{ height: "1.7rem" }}
-              >
-                Theme
-              </a>
+              <ThemeButton title={t("theme")} />
             </li>
           </ul>
         </div>
