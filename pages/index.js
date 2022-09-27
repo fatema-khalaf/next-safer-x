@@ -1,5 +1,6 @@
-// Page title
-import Head from "next/head";
+// Page Head
+import PageHead from "../components/pageHead/PageHead";
+
 // Layout
 import MainLayout from "../layouts/mainLayout";
 // Page sections
@@ -49,10 +50,9 @@ export default function Home(props) {
 
   return (
     <div>
-      <Head>
-        <title>Home | Eco-TX</title>
-        <link rel="icon" href="/fav-icon.png" />
-      </Head>
+      <PageHead title="home">
+        <meta name="author" content="John Doe" />
+      </PageHead>
       <Banner />
       <TextScroll />
       <PopularMarketSection />

@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
+import { ThemeButtonIcon } from "../theme/ThemeSwitcher";
 
 const LogoHeader = ({}) => {
   const router = useRouter();
@@ -23,7 +24,10 @@ const LogoHeader = ({}) => {
         </a>
       </Link>
 
-      <ul className={`${styles["nav"]} ${styles["nav-right"]}`}>
+      <ul
+        className={`${styles["nav"]} ${styles["nav-right"]}`}
+        style={{ display: "flex" }}
+      >
         <li className={`${styles["nav-1"]} ${styles["nav__item--side"]}`}>
           <div
             className={`${styles["nav-1"]} ${styles["nav__item"]} ${styles["nav__item--toggle"]}`}
@@ -80,13 +84,7 @@ const LogoHeader = ({}) => {
             </div>
           </div>
           <span>|</span>
-          <a
-            href="#"
-            className={styles["nav__link"]}
-            style={{ height: "1.7rem" }}
-          >
-            <BsMoonStarsFill />
-          </a>
+          <ThemeButtonIcon />
         </li>
       </ul>
     </div>

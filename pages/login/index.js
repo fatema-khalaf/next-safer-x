@@ -2,6 +2,7 @@ import Head from "next/head";
 import Login from "../../components/login/Login";
 import LogoLayout from "../../layouts/LogoLayout";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import PageHead from "../../components/pageHead/PageHead";
 
 // add
 export async function getStaticProps({ locale }) {
@@ -16,10 +17,7 @@ export async function getStaticProps({ locale }) {
 export default function Index() {
   return (
     <div>
-      <Head>
-        <title>LogIn | Eco-TX </title>
-        <link rel="icon" href="/fav-icon.png" />
-      </Head>
+      <PageHead title="Login" />
       <Login />
     </div>
   );

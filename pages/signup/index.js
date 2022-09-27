@@ -1,4 +1,6 @@
-import Head from "next/head";
+// Page Head
+import PageHead from "../components/pageHead/PageHead";
+
 import Login from "../../components/login/Login";
 import SignUp from "../../components/signUp/SignUpForm";
 import LogoLayout from "../../layouts/LogoLayout";
@@ -15,10 +17,7 @@ export async function getStaticProps({ locale }) {
 export default function Index() {
   return (
     <div>
-      <Head>
-        <title>Sign Up | Eco-TX</title>
-        <link rel="icon" href="/fav-icon.png" />
-      </Head>
+      <PageHead title="Sign Up"></PageHead>
       <SignUp />
     </div>
   );

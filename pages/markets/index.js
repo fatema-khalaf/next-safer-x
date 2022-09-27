@@ -5,6 +5,7 @@ import { DataTable } from "../../components/table/DataTable";
 import PageTitleBanner from "../../components/UI/PageTitle";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import PageHead from "../../components/pageHead/PageHead";
 
 export async function getStaticProps({ locale }) {
   return {
@@ -17,10 +18,7 @@ export async function getStaticProps({ locale }) {
 export default function Index() {
   return (
     <div>
-      <Head>
-        <title> Markets | Eco-TX</title>
-        <link rel="icon" href="/fav-icon.png" />
-      </Head>
+      <PageHead title="Markets"></PageHead>
       <PageTitleBanner title="Markets" />
       <DataTable
         rows={rows}

@@ -4,6 +4,7 @@ import PageTitleBanner from "../../components/UI/PageTitle";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import LanchpadSection from "../../sections/LaunchpadSection";
+import PageHead from "../../components/pageHead/PageHead";
 export async function getStaticProps({ locale }) {
   return {
     props: {
@@ -18,10 +19,7 @@ export default function Index() {
 
   return (
     <div>
-      <Head>
-        <title> {t("lanchpad")} | Eco-TX</title>
-        <link rel="icon" href="/fav-icon.png" />
-      </Head>
+      <PageHead title={t("lanchpad")} />
       <PageTitleBanner title={t("lanchpad")} />
       <LanchpadSection countdown={THREE_DAYS_IN_MS} />
     </div>
