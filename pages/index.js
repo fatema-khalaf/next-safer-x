@@ -17,13 +17,16 @@ import ReactPuzzleConfirm from "../components/ReactPuzzleConfirm";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ConfirmContainer from "../components/confirmation_window/ConfirmContainer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // To provide language locale in all child components
 export async function getStaticProps({ locale }) {
+  const res = await fetch("http://127.0.0.1:8000/api/frontmenu");
+  const data = await res.json();
   return {
     props: {
       locale,
+      data,
       ...(await serverSideTranslations(locale, ["common"])),
     },
   };
@@ -31,6 +34,11 @@ export async function getStaticProps({ locale }) {
 
 export default function Home(props) {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    localStorage.setItem("menu", JSON.stringify(props.data));
+  }, []);
+
   // Toaster function
   const notify = () =>
     toast.info("🦄 Wow so easy!", {

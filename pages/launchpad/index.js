@@ -15,7 +15,7 @@ export async function getStaticProps({ locale }) {
 }
 export default function Index() {
   const { t } = useTranslation("common");
-  const THREE_DAYS_IN_MS = 1 * 24 * 60 * 60 * 1000; // the time to set timer countdown in ms
+  const THREE_DAYS_IN_MS = 3 * 24 * 60 * 60 * 1000; // the time to set timer countdown in ms
 
   return (
     <div>

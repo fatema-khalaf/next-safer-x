@@ -1,8 +1,6 @@
 import styles from "../../styles/theme/main.module.scss";
-import ReactDOM from "react-dom";
 import { IoCloseOutline } from "react-icons/io5";
-import { items } from "../../DummyData/NavbarItems";
-import { useEffect, useRef, createRef } from "react";
+import { useEffect, useState } from "react";
 import Portal from "../../HOC/Portal";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -22,6 +20,15 @@ const SideNavBarContent = ({ state, onClose }) => {
   // language
   const router = useRouter();
   const { t } = useTranslation();
+
+  // Menu
+  const [menu, setMenu] = useState([]);
+  const setVale = (val) => {
+    setMenu(val);
+  };
+  useEffect(() => {
+    setVale(JSON.parse(localStorage.getItem("menu"))?.data);
+  }, []);
 
   return (
     <div
@@ -70,15 +77,15 @@ const SideNavBarContent = ({ state, onClose }) => {
         </div>
         <div className={styles["toggle-view-sm"]}>
           <ul>
-            {items.map((item, index) =>
-              item.subMenu ? (
+            {menu?.map((item, index) =>
+              item.subMenu.length !== 0 ? (
                 <div key={index}>
                   <div
                     key={index}
                     className={`${styles["nav-2"]} ${styles["nav__item"]} ${styles["nav__link"]} ${styles["side-menu-holder--item"]}`}
                     onClick={showSub}
                   >
-                    {item.title}
+                    {item.title[`${router.locale}`]}
                     {item.subMenu && (
                       <span style={{ display: "flex", marginLeft: ".4rem" }}>
                         <TiArrowSortedDown />
@@ -89,12 +96,12 @@ const SideNavBarContent = ({ state, onClose }) => {
                     className={`${styles["toggle-view-sm--sub"]} ${styles["nav-2"]}`}
                   >
                     {item.subMenu.map((subItem, index) => (
-                      <Link href={subItem.link} key={index}>
+                      <Link href={subItem.url} key={index}>
                         <a
                           className={styles["nav__link"]}
                           style={{ padding: " 1.5rem" }}
                         >
-                          {subItem.title}
+                          {subItem.title[`${router.locale}`]}
                         </a>
                       </Link>
                     ))}
@@ -105,8 +112,8 @@ const SideNavBarContent = ({ state, onClose }) => {
                   key={index}
                   className={`${styles["nav-2"]} ${styles["nav__item"]}`}
                 >
-                  <a href={item.link} className={styles["nav__link"]}>
-                    {item.title}
+                  <a href={item.url} className={styles["nav__link"]}>
+                    {item.title[`${router.locale}`]}
                   </a>
                 </li>
               )

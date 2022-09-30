@@ -1,6 +1,6 @@
 import styles from "../../styles/theme/main.module.scss";
 import { items } from "../../DummyData/NavbarItems";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { FaArrowRight } from "react-icons/fa";
@@ -19,6 +19,16 @@ const Header = (props) => {
 
   const router = useRouter();
   const { t } = useTranslation("common");
+
+  const [menu, setMenu] = useState([]);
+  const setVale = (val) => {
+    setMenu(val);
+    console.log(menu);
+  };
+  useEffect(() => {
+    setVale(JSON.parse(localStorage.getItem("menu"))?.data);
+  }, []);
+
   return (
     <div className={styles["header"]}>
       <h1> {props.locale}</h1>
@@ -34,7 +44,65 @@ const Header = (props) => {
         </a>
       </Link>
       <ul className={styles["nav"]}>
-        {items.map((item) => (
+        {menu?.map((item) => (
+          <li
+            className={`${styles["nav-1"]} ${styles["nav__item"]} ${styles["nav__item--toggle"]}`}
+            key={item.id}
+            onMouseMove={() => {
+              const sub = document.getElementById(item.id);
+              if (
+                sub &&
+                window.innerWidth < sub.getBoundingClientRect().right
+              ) {
+                sub.style.right = "5rem";
+              }
+              if (sub && sub.getBoundingClientRect().left < 0) {
+                sub.style.left = "5rem";
+              }
+            }}
+          >
+            <span className={styles["nav__item--container"]}>
+              <Link href={item.url}>
+                <a className={styles["nav__link"]}>
+                  {item.title[`${router.locale}`]}
+                </a>
+              </Link>
+              {item.subMenu.length !== 0 && (
+                <span style={{ display: "flex", marginLeft: ".4rem" }}>
+                  <TiArrowSortedDown />
+                </span>
+              )}
+            </span>
+            {item.subMenu.length !== 0 && (
+              <div className={styles["sub--menu"]} id={item.id}>
+                <div className={styles["sub--menu__container"]}>
+                  {item.subMenu.map((subItem) => (
+                    <Link href={subItem.url} key={subItem.id}>
+                      <a>
+                        <span className={styles["sub--menu__container--item"]}>
+                          <div className={styles["nav-1"]}>
+                            {subItem.title[`${router.locale}`]}
+                          </div>
+                          <span
+                            className={`${styles["nav-1"]}`}
+                            style={{ display: "none" }}
+                          >
+                            {router.locale === "ar" ? (
+                              <FaArrowLeft />
+                            ) : (
+                              <FaArrowRight />
+                            )}
+                          </span>
+                        </span>
+                      </a>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </li>
+        ))}
+        {/* {items.map((item) => (
           <li
             className={`${styles["nav-1"]} ${styles["nav__item"]} ${styles["nav__item--toggle"]}`}
             key={item.id}
@@ -87,7 +155,7 @@ const Header = (props) => {
               </div>
             )}
           </li>
-        ))}
+        ))} */}
       </ul>
 
       <ul className={`${styles["nav"]} ${styles["nav-right"]}`}>
