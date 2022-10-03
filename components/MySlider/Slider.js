@@ -13,7 +13,8 @@ const slides = [
   {
     image: "/images/slide5.jpg",
     title: "TRADE WITH SAFER-X",
-    subtitle: "Buy, trade, and hold 350+ cryptocurrencies on Binance",
+    subtitle:
+      "The collectibles industry has been around for a long time, and items such as baseball cards, stamps, and sneakers have long held value to collectors all over the world. But challenges like restricted access, the risk of forgery, and physical damage are common obstacles for many collectors.",
   },
   {
     image: "/images/slide6.jpg",
@@ -30,7 +31,7 @@ const Slider = () => {
     setCurrent(slideIndex);
   };
   useEffect(() => {
-    autoSlide();
+    // autoSlide();
   }, [current]);
 
   const autoSlide = () => {
