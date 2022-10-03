@@ -6,37 +6,40 @@ import { HiArrowDown } from "react-icons/hi";
 
 const slides = [
   {
-    image: "/images/slide4.jpg",
+    image: "/images/slide1.jpg",
     title: "TRADE WITH SAFER-X",
     subtitle: "Buy, trade, and hold 350+ cryptocurrencies on Binance",
   },
   {
-    image: "/images/slide5.jpg",
+    image: "/images/slide7.jpg",
     title: "TRADE WITH SAFER-X",
     subtitle:
       "The collectibles industry has been around for a long time, and items such as baseball cards, stamps, and sneakers have long held value to collectors all over the world. But challenges like restricted access, the risk of forgery, and physical damage are common obstacles for many collectors.",
   },
   {
-    image: "/images/slide6.jpg",
+    image: "/images/slide3.webp",
+    title: "TRADE WITH SAFER-X",
+    subtitle: "Buy, trade, and hold 350+ cryptocurrencies on Binance",
+  },
+  {
+    image: "/images/slide8.jpg",
     title: "TRADE WITH SAFER-X",
     subtitle: "Buy, trade, and hold 350+ cryptocurrencies on Binance",
   },
 ];
 const Slider = () => {
   const [current, setCurrent] = useState(0);
-  const [animate, setAnimate] = useState(false);
-  console.log(current);
   let timer;
   const goToSlide = (slideIndex) => {
     setCurrent(slideIndex);
   };
   useEffect(() => {
-    // autoSlide();
+    autoSlide();
   }, [current]);
 
   const autoSlide = () => {
     timer = setTimeout(() => {
-      setCurrent((prev) => (prev !== 2 ? prev + 1 : 0));
+      setCurrent((prev) => (prev !== slides.length - 1 ? prev + 1 : 0));
     }, 4000);
   };
   return (
@@ -54,6 +57,8 @@ const Slider = () => {
               image={item.image}
               title={item.title}
               subTitle={item.subtitle}
+              current={current}
+              index={index}
             />
           ))}
         </div>
@@ -63,7 +68,7 @@ const Slider = () => {
           <div
             className={styles["slider--controlles--icons"]}
             onClick={() => {
-              setCurrent((prev) => (prev !== 2 ? prev + 1 : 0));
+              setCurrent((prev) => (prev !== slides.length - 1 ? prev + 1 : 0));
               clearTimeout(timer);
             }}
           >
@@ -93,7 +98,7 @@ const Slider = () => {
             className={styles["slider--controlles--icons"]}
             style={{ marginTop: "1rem!important" }}
             onClick={() => {
-              setCurrent((prev) => (prev !== 0 ? prev - 1 : 2));
+              setCurrent((prev) => (prev !== 0 ? prev - 1 : slides.length - 1));
               clearTimeout(timer);
             }}
           >

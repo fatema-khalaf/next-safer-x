@@ -155,3 +155,27 @@
         }
     }
 }
+.animate--slide__text {
+    animation: slideTextRight 0.7s cubic-bezier(0.86, 1.86, 0.28, 1.13);
+    // animation-delay: 0.4s;
+}
+.animate--slide__image {
+    animation: SlideImageLeft 0.7s cubic-bezier(0.86, 1.86, 0.28, 1.13);
+    // animation-delay: 0.4s;
+}
+@keyframes slideTextRight {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+@keyframes SlideImageLeft {
+    from {
+        transform: translateX(50%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
