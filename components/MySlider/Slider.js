@@ -1,9 +1,29 @@
 import { useEffect, useState } from "react";
 import Slide from "./slide";
 import styles from "../../styles/theme/main.module.scss";
+import { HiArrowUp } from "react-icons/hi";
+import { HiArrowDown } from "react-icons/hi";
 
+const slides = [
+  {
+    image: "/images/slide4.jpg",
+    title: "TRADE WITH SAFER-X",
+    subtitle: "Buy, trade, and hold 350+ cryptocurrencies on Binance",
+  },
+  {
+    image: "/images/slide5.jpg",
+    title: "TRADE WITH SAFER-X",
+    subtitle: "Buy, trade, and hold 350+ cryptocurrencies on Binance",
+  },
+  {
+    image: "/images/slide6.jpg",
+    title: "TRADE WITH SAFER-X",
+    subtitle: "Buy, trade, and hold 350+ cryptocurrencies on Binance",
+  },
+];
 const Slider = () => {
   const [current, setCurrent] = useState(0);
+  const [animate, setAnimate] = useState(false);
   console.log(current);
   let timer;
   const goToSlide = (slideIndex) => {
@@ -19,79 +39,66 @@ const Slider = () => {
     }, 4000);
   };
   return (
-    <div>
-      <div
-        className={styles["carsoule--holder"]}
-        // style={{
-        //   width: "90vw",
-        //   height: "600px",
-        //   display: "flex",
-        //   overflow: "hidden",
-        //   margin: "0 auto",
-        // }}
-      >
+    <div style={{ position: "relative" }}>
+      <div className={styles["carsoule--holder"]}>
         <div
           className={styles["slides--container"]}
           style={{
             transform: `translateY(-${current * 100}%)`,
           }}
         >
-          <Slide
-            image="/images/slide1.jpg"
-            title="TRADE WITH SAFER-X"
-            subTitle="Buy, trade, and hold 350+ cryptocurrencies on Binance"
-          />
-          <Slide
-            image="/images/slide2.jpg"
-            title="TRADE WITH SAFER-X"
-            subTitle="Buy, trade, and hold 350+ cryptocurrencies on Binance"
-          />
-          <Slide
-            image="/images/slide3.webp"
-            title="TRADE WITH SAFER-X"
-            subTitle="Buy, trade, and hold 350+ cryptocurrencies on Binance"
-          />
-          {/* <div
-            style={{ width: "50px", height: "50px", backgroundColor: "red" }}
-          >
-            1
-          </div>
-          <div
-            style={{ width: "50px", height: "50px", backgroundColor: "green" }}
-          >
-            2
-          </div>
-          <div
-            style={{ width: "50px", height: "50px", backgroundColor: "blue" }}
-          >
-            3
-          </div> */}
+          {slides.map((item, index) => (
+            <Slide
+              key={index}
+              image={item.image}
+              title={item.title}
+              subTitle={item.subtitle}
+            />
+          ))}
         </div>
       </div>
-      <button
-        onClick={() => {
-          setCurrent((prev) => (prev !== 2 ? prev + 1 : 0));
-          clearTimeout(timer);
-        }}
-      >
-        next
-      </button>
-      <button
-        onClick={() => {
-          setCurrent((prev) => (prev !== 0 ? prev - 1 : 2));
-          clearTimeout(timer);
-        }}
-      >
-        back
-      </button>
-      <div key={0} onClick={() => goToSlide(0)}>
-        ●
-      </div>
-      <div key={1} onClick={() => goToSlide(1)}>
-        ●
-      </div>
-      <div key={2} onClick={() => goToSlide(2)}>
-        ●
+      <div className={styles["slider--controlles--container"]}>
+        <div className={styles["slider--controlles"]}>
+          <div
+            className={styles["slider--controlles--icons"]}
+            onClick={() => {
+              setCurrent((prev) => (prev !== 2 ? prev + 1 : 0));
+              clearTimeout(timer);
+            }}
+          >
+            <HiArrowUp />
+          </div>
+          {slides.map((item, index) => (
+            <div
+              style={{
+                paddingLeft: current === index && "1rem",
+                width: "100%",
+              }}
+            >
+              <div
+                key={index}
+                style={{ marginBottom: "1rem!important" }}
+                onClick={() => goToSlide(index)}
+                className={`${styles["slider--controlles--numbers"]} ${
+                  current === index &&
+                  styles["slider--controlles--numbers__active"]
+                }`}
+              >
+                {index + 1}
+              </div>
+            </div>
+          ))}
+          <div
+            className={styles["slider--controlles--icons"]}
+            style={{ marginTop: "1rem!important" }}
+            onClick={() => {
+              setCurrent((prev) => (prev !== 0 ? prev - 1 : 2));
+              clearTimeout(timer);
+            }}
+          >
+            <HiArrowDown />
+          </div>
+        </div>
       </div>
     </div>
   );
