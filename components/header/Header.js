@@ -21,12 +21,11 @@ const Header = (props) => {
   const { t } = useTranslation("common");
 
   const [menu, setMenu] = useState([]);
-  const setVale = (val) => {
+  const setValue = (val) => {
     setMenu(val);
-    console.log(menu);
   };
   useEffect(() => {
-    setVale(JSON.parse(localStorage.getItem("menu"))?.data);
+    setValue(JSON.parse(localStorage.getItem("menu"))?.data);
   }, []);
 
   return (

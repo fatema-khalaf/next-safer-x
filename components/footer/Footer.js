@@ -6,7 +6,21 @@ import { GrTwitter } from "react-icons/gr";
 import { SiYoutube } from "react-icons/si";
 import { FaTelegramPlane } from "react-icons/fa";
 import { ImLinkedin2 } from "react-icons/im";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 const Footer = () => {
+  // language
+  const router = useRouter();
+  const { t } = useTranslation();
+  // Menu
+  const [menu, setMenu] = useState([]);
+  const setValue = (val) => {
+    setMenu(val);
+  };
+  useEffect(() => {
+    setValue(JSON.parse(localStorage.getItem("menu"))?.data);
+  }, []);
   return (
     <div className={styles["footer--section"]}>
       <div className={styles["footer"]}>
@@ -31,19 +45,22 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles["footer__nav"]}>
-          {items.map((item, index) => (
+          {menu?.map((item, index) => (
             <div className={styles["footer__nav--list"]} key={index}>
               <h6
                 className={styles["body-2"]}
                 style={{ paddingInlineStart: "0rem" }}
               >
-                {item.title}
+                {item.title[`${router.locale}`]}
               </h6>
-              {item.subMenu.map((subItem, index) => (
-                <Link href={subItem.link} key={index}>
-                  <a className={styles["nav--footer"]}>{subItem.title}</a>
-                </Link>
-              ))}
+              {item.subMenu.length !== 0 &&
+                item.subMenu.map((subItem, index) => (
+                  <Link href={subItem.url} key={index}>
+                    <a className={styles["nav--footer"]}>
+                      {subItem.title[`${router.locale}`]}
+                    </a>
+                  </Link>
+                ))}
             </div>
           ))}
         </div>

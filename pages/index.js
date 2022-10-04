@@ -18,7 +18,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ConfirmContainer from "../components/confirmation_window/ConfirmContainer";
 import { useEffect, useState } from "react";
-// import Slider from "../components/slider/Slider";
 import Slider from "../components/Myslider/Slider";
 import axios from "../lib/axios";
 import AppUrl from "../lib/AppUrl";

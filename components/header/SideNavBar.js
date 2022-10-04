@@ -23,11 +23,11 @@ const SideNavBarContent = ({ state, onClose }) => {
 
   // Menu
   const [menu, setMenu] = useState([]);
-  const setVale = (val) => {
+  const setValue = (val) => {
     setMenu(val);
   };
   useEffect(() => {
-    setVale(JSON.parse(localStorage.getItem("menu"))?.data);
+    setValue(JSON.parse(localStorage.getItem("menu"))?.data);
   }, []);
 
   return (
