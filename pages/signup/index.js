@@ -1,5 +1,5 @@
 // Page Head
-import PageHead from "../components/pageHead/PageHead";
+import PageHead from "../../components/pageHead/PageHead";
 
 import Login from "../../components/login/Login";
 import SignUp from "../../components/signUp/SignUpForm";
@@ -14,10 +14,11 @@ export async function getStaticProps({ locale }) {
     },
   };
 }
+
 export default function Index() {
   return (
     <div>
-      <PageHead title="Sign Up"></PageHead>
+      <PageHead title="Sign Up" />
       <SignUp />
     </div>
   );
