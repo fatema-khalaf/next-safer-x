@@ -18,25 +18,33 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ConfirmContainer from "../components/confirmation_window/ConfirmContainer";
 import { useEffect, useState } from "react";
+// import Slider from "../components/slider/Slider";
+import Slider from "../components/Myslider/Slider";
+import axios from "../lib/axios";
+import AppUrl from "../lib/AppUrl";
 
-// To provide language locale in all child components
+// To provide language locale & menu in all child components
 export async function getStaticProps({ locale }) {
-  const res = await fetch("http://127.0.0.1:8000/api/frontmenu");
-  const data = await res.json();
+  const menuResponse = await axios.get(AppUrl.Menu);
+  const sliderResponse = await axios.get(AppUrl.Slider);
+  const menu = menuResponse.data; // menu data
+  const slider = sliderResponse.data.data; // slider data
+
   return {
     props: {
       locale,
-      data,
+      menu,
+      slider,
       ...(await serverSideTranslations(locale, ["common"])),
     },
   };
 }
 
 export default function Home(props) {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   useEffect(() => {
-    localStorage.setItem("menu", JSON.stringify(props.data));
+    localStorage.setItem("menu", JSON.stringify(props.menu));
   }, []);
 
   // Toaster function
@@ -61,8 +69,9 @@ export default function Home(props) {
       <PageHead title="home">
         <meta name="author" content="John Doe" />
       </PageHead>
-      <Banner />
+      <Slider slides={props.slider} locale={props.locale} />
       <TextScroll />
+      <Banner />
       <PopularMarketSection />
       <CardSection />
       <div>

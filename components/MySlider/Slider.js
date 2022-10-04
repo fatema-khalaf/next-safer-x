@@ -4,30 +4,7 @@ import styles from "../../styles/theme/main.module.scss";
 import { HiArrowUp } from "react-icons/hi";
 import { HiArrowDown } from "react-icons/hi";
 
-const slides = [
-  {
-    image: "/images/slide1.jpg",
-    title: "TRADE WITH SAFER-X",
-    subtitle: "Buy, trade, and hold 350+ cryptocurrencies on Binance",
-  },
-  {
-    image: "/images/slide7.jpg",
-    title: "TRADE WITH SAFER-X",
-    subtitle:
-      "The collectibles industry has been around for a long time, and items such as baseball cards, stamps, and sneakers have long held value to collectors all over the world. But challenges like restricted access, the risk of forgery, and physical damage are common obstacles for many collectors.",
-  },
-  {
-    image: "/images/slide3.webp",
-    title: "TRADE WITH SAFER-X",
-    subtitle: "Buy, trade, and hold 350+ cryptocurrencies on Binance",
-  },
-  {
-    image: "/images/slide8.jpg",
-    title: "TRADE WITH SAFER-X",
-    subtitle: "Buy, trade, and hold 350+ cryptocurrencies on Binance",
-  },
-];
-const Slider = () => {
+const Slider = ({ locale, slides }) => {
   const [current, setCurrent] = useState(0);
   let timer;
   const goToSlide = (slideIndex) => {
@@ -40,7 +17,7 @@ const Slider = () => {
   const autoSlide = () => {
     timer = setTimeout(() => {
       setCurrent((prev) => (prev !== slides.length - 1 ? prev + 1 : 0));
-    }, 4000);
+    }, 8000);
   };
   return (
     <div style={{ position: "relative" }}>
@@ -55,8 +32,9 @@ const Slider = () => {
             <Slide
               key={index}
               image={item.image}
-              title={item.title}
-              subTitle={item.subtitle}
+              alt={item.altImg[locale]}
+              title={item.title[locale]}
+              hint={item.hint[locale]}
               current={current}
               index={index}
             />

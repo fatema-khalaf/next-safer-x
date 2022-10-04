@@ -1,5 +1,5 @@
 import styles from "../../styles/theme/main.module.scss";
-const Slide = ({ image, title, subTitle, current, index }) => {
+const Slide = ({ image, title, hint, current, index, alt }) => {
   return (
     <div
       className={styles["slide--container"]}
@@ -21,7 +21,7 @@ const Slide = ({ image, title, subTitle, current, index }) => {
               >
                 {title}
               </h1>
-              <div className={styles["h2"]}>{subTitle}</div>
+              <div className={styles["h2"]}>{hint}</div>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@ const Slide = ({ image, title, subTitle, current, index }) => {
             current === index && styles["animate--slide__image"]
           }`}
         >
-          <img src={image} loading="lazy"></img>
+          <img src={image} loading="lazy" alt={alt}></img>
         </div>
       </div>
     </div>
