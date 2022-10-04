@@ -108,7 +108,9 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
   background: var(--dec-color); 
 }
-
+ul {
+  list-style-position: inside !important;
+}
 
 
 /* html,

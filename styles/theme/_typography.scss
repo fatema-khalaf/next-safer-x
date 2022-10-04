@@ -27,7 +27,6 @@
 .h2 {
     font-family: $font-primary;
     font-size: 2rem;
-    line-height: 1;
     font-weight: 300;
     color: $second-color;
     &--light {
@@ -105,6 +104,7 @@
     @extend %body;
     font-size: 1.5rem;
     color: $second-color !important;
+    text-transform: capitalize;
     &--light {
         @extend .nav-1;
         color: $color-font-primary;
@@ -129,7 +129,7 @@
     color: $second-color !important;
 }
 .body-1 {
-    font-family: $color-font-primary;
+    font-family: $font-primary;
     font-weight: 400;
     font-size: 1.5rem;
     text-align: start;
@@ -142,6 +142,10 @@
     @extend .body-1;
     font-weight: 700;
     font-size: 1.6rem;
+    &--light {
+        @extend .body-2;
+        color: $color-font-body !important;
+    }
 }
 .body-3 {
     font-family: $font-primary;
