@@ -54,6 +54,7 @@ const Slider = ({ locale, slides }) => {
           </div>
           {slides.map((item, index) => (
             <div
+              key={index}
               style={{
                 paddingLeft: current === index && "1rem",
                 width: "100%",

@@ -159,14 +159,14 @@ const Header = (props) => {
 
       <ul className={`${styles["nav"]} ${styles["nav-right"]}`}>
         <li className={`${styles["nav-1"]} ${styles["nav__item"]}`}>
-          <a href="/login" className={styles["nav__link"]}>
+          <Link href="/login" className={styles["nav__link"]}>
             {t("login")}
-          </a>
+          </Link>
         </li>
         <li className={`${styles["nav-1"]} ${styles["nav__item"]}`}>
-          <a href="/signup" className={`${styles["nav-1"]} ${styles["btn"]}`}>
+          <Link href="/signup" className={`${styles["nav-1"]} ${styles["btn"]}`}>
             {t("common:signup")}
-          </a>
+          </Link>
         </li>
 
         <li className={`${styles["nav-1"]} ${styles["nav__item"]}`}>

@@ -16,8 +16,8 @@ const MarketsTable = ({ items }) => {
       </thead>
 
       <tbody id="price_today_ul">
-        {items.map((item) => (
-          <Link href={item.link}>
+        {items.map((item, index) => (
+          <Link href={item.link} key={index}>
             <tr className={styles["table-row"]}>
               <td>
                 <div
